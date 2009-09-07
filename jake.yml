@@ -1,0 +1,110 @@
+---
+source_directory:     build
+build_directory:      dist
+layout:               together
+
+builds:
+  min:
+    packer:           false
+    suffix:           false
+
+packages:
+  
+  yahoo-dom-event:
+    files:
+      - yahoo-dom-event/yahoo-dom-event
+    meta:
+      provides:
+        - YAHOO
+        - YAHOO.env
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Lang
+        - YAHOO.util.Dom
+        - YAHOO.util.Region
+        - YAHOO.util.Point
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.Subscriber
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+        - YAHOO.util.KeyListener
+  
+  selector:
+    files:
+      - selector/selector-beta-min
+    meta:
+      requires:
+        - YAHOO
+        - YAHOO.util
+      provides:
+        - YAHOO.util.Selector
+  
+  animation:
+    files:
+      - animation/animation-min
+    meta:
+      requires:
+        - YAHOO
+        - YAHOO.util
+        - YAHOO.lang
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+        - YAHOO.util.CustomEvent
+      provides:
+        - YAHOO.util.Anim
+        - YAHOO.util.AnimMgr
+        - YAHOO.util.Bezier
+        - YAHOO.util.ColorAnim
+        - YAHOO.util.Easing
+        - YAHOO.util.Motion
+        - YAHOO.util.Scroll
+  
+  connection:
+    files:
+      - connection/connection-min
+    meta:
+      requires:
+        - YAHOO
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Event
+        - YAHOO.util.CustomEvent
+      provides:
+        - YAHOO.util.Connect
+  
+  get:
+    files:
+      - get/get-beta-min
+    meta:
+      requires:
+        - YAHOO
+        - YAHOO.env
+        - YAHOO.lang
+        - YAHOO.util
+      provides:
+        - YAHOO.util.Get
+  
+  json:
+    files:
+      - json/json-beta-min
+    meta:
+      requires:
+        - YAHOO
+        - YAHOO.lang
+      provides:
+        - YAHOO.lang.JSON
+  
+  history:
+    files:
+      - history/history-min
+    meta:
+      requires:
+        - YAHOO
+        - YAHOO.env
+        - YAHOO.util
+        - YAHOO.util.Event
+        - YAHOO.util.CustomEvent
+      provides:
+        - YAHOO.util.History
+    
