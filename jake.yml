@@ -1,20 +1,3 @@
-<%
-    # Automatically pick the file from each YUI package to copy to the
-    # 'dist' folder during build. Should handle files whose beta/min
-    # designation changes between versions.
-    def file(pkg)
-      pkg = pkg.to_s
-      dir = File.join(File.dirname(__FILE__), 'build', pkg)
-      
-      file = ['-beta', '-experimental', ''].
-             map { |s| [s + '-min', s] }.
-             flatten.
-             map { |s| File.join(dir, pkg + s + '.js') }.
-             find(&File.method(:file?))
-      
-      File.join(pkg, File.basename(file))
-    end
-%>
 ---
 source_directory:     build
 build_directory:      dist
@@ -29,7 +12,7 @@ packages:
   
   animation:
     files:
-      - <%=file :animation %>
+      - animation/animation-min
     meta:
       requires:
         - YAHOO.util
@@ -48,7 +31,7 @@ packages:
   
   autocomplete:
     files:
-      - <%=file :autocomplete %>
+      - autocomplete/autocomplete-min
     meta:
       requires:
         - YAHOO.lang
@@ -70,7 +53,7 @@ packages:
   
   button:
     files:
-      - <%=file :button %>
+      - button/button-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -90,7 +73,7 @@ packages:
   
   calendar:
     files:
-      - <%=file :calendar %>
+      - calendar/calendar-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -114,7 +97,7 @@ packages:
   
   charts:
     files:
-      - <%=file :charts %>
+      - charts/charts-experimental-min
     meta:
       requires:
         - YAHOO.lang.JSON
@@ -145,7 +128,7 @@ packages:
   
   colorpicker:
     files:
-      - <%=file :colorpicker %>
+      - colorpicker/colorpicker-beta-min
     meta:
       requires:
         - YAHOO.lang
@@ -161,7 +144,7 @@ packages:
   
   connection:
     files:
-      - <%=file :connection %>
+      - connection/connection-min
     meta:
       requires:
         - YAHOO.lang
@@ -173,7 +156,7 @@ packages:
   
   container:
     files:
-      - <%=file :container %>
+      - container/container-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -202,7 +185,7 @@ packages:
   
   datasource:
     files:
-      - <%=file :datasource %>
+      - datasource/datasource-beta-min
     meta:
       requires:
         - YAHOO.lang
@@ -217,7 +200,7 @@ packages:
   
   datatable:
     files:
-      - <%=file :datatable %>
+      - datatable/datatable-beta-min
     meta:
       requires:
         - YAHOO.lang
@@ -241,7 +224,7 @@ packages:
   
   dragdrop:
     files:
-      - <%=file :dragdrop %>
+      - dragdrop/dragdrop-min
     meta:
       requires:
         - YAHOO.util
@@ -259,7 +242,7 @@ packages:
   
   editor:
     files:
-      - <%=file :editor %>
+      - editor/editor-beta-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -286,7 +269,7 @@ packages:
   
   element:
     files:
-      - <%=file :element %>
+      - element/element-beta-min
     meta:
       requires:
         - YAHOO.lang
@@ -302,7 +285,7 @@ packages:
   
   get:
     files:
-      - <%=file :get %>
+      - get/get-beta-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -313,7 +296,7 @@ packages:
   
   history:
     files:
-      - <%=file :history %>
+      - history/history-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -326,7 +309,7 @@ packages:
   
   imageloader:
     files:
-      - <%=file :imageloader %>
+      - imageloader/imageloader-beta-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -339,7 +322,7 @@ packages:
   
   json:
     files:
-      - <%=file :json %>
+      - json/json-beta-min
     meta:
       requires:
         - YAHOO.lang
@@ -348,7 +331,7 @@ packages:
   
   logger:
     files:
-      - <%=file :logger %>
+      - logger/logger-min
     meta:
       requires:
         - YAHOO.lang
@@ -364,7 +347,7 @@ packages:
   
   menu:
     files:
-      - <%=file :menu %>
+      - menu/menu-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -387,7 +370,7 @@ packages:
   
   profiler:
     files:
-      - <%=file :profiler %>
+      - profiler/profiler-beta-min
     meta:
       requires:
         - YAHOO.lang
@@ -397,7 +380,7 @@ packages:
   
   selector:
     files:
-      - <%=file :selector %>
+      - selector/selector-beta-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -407,7 +390,7 @@ packages:
   
   slider:
     files:
-      - <%=file :slider %>
+      - slider/slider-min
     meta:
       requires:
         - YAHOO.lang
@@ -425,7 +408,7 @@ packages:
   
   tabview:
     files:
-      - <%=file :tabview %>
+      - tabview/tabview-min
     meta:
       requires:
         - YAHOO.lang
@@ -439,7 +422,7 @@ packages:
   
   treeview:
     files:
-      - <%=file :treeview %>
+      - treeview/treeview-min
     meta:
       requires:
         - YAHOO.util.Anim
@@ -458,7 +441,7 @@ packages:
   
   yahoo-dom-event:
     files:
-      - <%=file 'yahoo-dom-event' %>
+      - yahoo-dom-event/yahoo-dom-event
     meta:
       provides:
         - YAHOO
@@ -479,7 +462,7 @@ packages:
   
   yuiloader:
     files:
-      - <%=file :yuiloader %>
+      - yuiloader/yuiloader-beta-min
     meta:
       requires:
         - YAHOO.env
@@ -492,7 +475,7 @@ packages:
   
   yuitest:
     files:
-      - <%=file :yuitest %>
+      - yuitest/yuitest-beta-min
     meta:
       requires:
         - YAHOO.lang
