@@ -168,7 +168,6 @@ packages:
         - YAHOO.util.DD
         - YAHOO.util.Easing
         - YAHOO.util.Motion
-        - YAHOO.widget.Button
       provides:
         - YAHOO.widget.ContainerEffect
         - YAHOO.widget.Dialog
