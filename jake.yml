@@ -115,7 +115,6 @@ packages:
         - YAHOO.widget.CartesianSeries
         - YAHOO.widget.CategoryAxis
         - YAHOO.widget.Chart
-        - YAHOO.widget.Charts
         - YAHOO.widget.ColumnChart
         - YAHOO.widget.ColumnSeries
         - YAHOO.widget.LineChart
@@ -482,6 +481,7 @@ packages:
         - YAHOO.util.Dom
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
+        - YAHOO.widget.LogReader
       provides:
         - YAHOO.tool.TestCase
         - YAHOO.tool.TestLogger
