@@ -35,13 +35,14 @@ packages:
     meta:
       requires:
         - YAHOO.lang
-        - YAHOO.lang.JSON
         - YAHOO.util
-        - YAHOO.util.Anim
-        - YAHOO.util.Connect
         - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
         - YAHOO.util.Event
+      uses:
+        - YAHOO.lang.JSON
+        - YAHOO.util.Anim
+        - YAHOO.util.Connect
         - YAHOO.util.Get
       provides:
         - YAHOO.widget.AutoComplete
