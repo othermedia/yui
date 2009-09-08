@@ -124,7 +124,7 @@ packages:
   
   colorpicker:
     files:
-      - colorpicker/colorpicker-beta-min
+      - colorpicker/colorpicker-min
     meta:
       requires:
         - YAHOO.lang
@@ -177,6 +177,10 @@ packages:
         - YAHOO.widget.Panel
         - YAHOO.widget.SimpleDialog
         - YAHOO.widget.Tooltip
+  
+  cookie:
+    files:
+      - cookie/cookie-beta-min
   
   datasource:
     files:
@@ -280,7 +284,7 @@ packages:
   
   get:
     files:
-      - get/get-beta-min
+      - get/get-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -300,9 +304,13 @@ packages:
       provides:
         - YAHOO.util.History
   
+  imagecropper:
+    files:
+      - imagecropper/imagecropper-beta-min
+  
   imageloader:
     files:
-      - imageloader/imageloader-beta-min
+      - imageloader/imageloader-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -315,12 +323,16 @@ packages:
   
   json:
     files:
-      - json/json-beta-min
+      - json/json-min
     meta:
       requires:
         - YAHOO.lang
       provides:
         - YAHOO.lang.JSON
+  
+  layout:
+    files:
+      - layout/layout-beta-min
   
   logger:
     files:
@@ -370,6 +382,14 @@ packages:
         - YAHOO.lang
       provides:
         - YAHOO.tool.Profiler
+  
+  profilerviewer:
+    files:
+      - profilerviewer/profilerviewer-beta-min
+  
+  resize:
+    files:
+      - resize/resize-beta-min
   
   selector:
     files:
@@ -432,6 +452,10 @@ packages:
         - YAHOO.widget.TVFadeOut
         - YAHOO.widget.TextNode
         - YAHOO.widget.TreeView
+  
+  uploader:
+    files:
+      - uploader/uploader-experimental-min
   
   yahoo-dom-event:
     files:
