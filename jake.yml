@@ -1,3 +1,20 @@
+<%
+    # Automatically pick the file from each YUI package to copy to the
+    # 'dist' folder during build. Should handle files whose beta/min
+    # designation changes between versions.
+    def file(pkg)
+      pkg = pkg.to_s
+      dir = File.join(File.dirname(__FILE__), 'build', pkg)
+      
+      file = ['-beta', '-experimental', ''].
+             map { |s| [s + '-min', s] }.
+             flatten.
+             map { |s| File.join(dir, pkg + s + '.js') }.
+             find(&File.method(:file?))
+      
+      File.join(pkg, File.basename(file))
+    end
+%>
 ---
 source_directory:     build
 build_directory:      dist
@@ -10,47 +27,16 @@ builds:
 
 packages:
   
-  yahoo-dom-event:
-    files:
-      - yahoo-dom-event/yahoo-dom-event
-    meta:
-      provides:
-        - YAHOO
-        - YAHOO.env
-        - YAHOO.env.ua
-        - YAHOO.lang
-        - YAHOO.util
-        - YAHOO.util.Lang
-        - YAHOO.util.Dom
-        - YAHOO.util.Region
-        - YAHOO.util.Point
-        - YAHOO.util.CustomEvent
-        - YAHOO.util.Subscriber
-        - YAHOO.util.Event
-        - YAHOO.util.EventProvider
-        - YAHOO.util.KeyListener
-  
-  selector:
-    files:
-      - selector/selector-beta-min
-    meta:
-      requires:
-        - YAHOO
-        - YAHOO.util
-      provides:
-        - YAHOO.util.Selector
-  
   animation:
     files:
-      - animation/animation-min
+      - <%=file :animation %>
     meta:
       requires:
-        - YAHOO
         - YAHOO.util
         - YAHOO.lang
+        - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
         - YAHOO.util.Event
-        - YAHOO.util.CustomEvent
       provides:
         - YAHOO.util.Anim
         - YAHOO.util.AnimMgr
@@ -60,51 +46,474 @@ packages:
         - YAHOO.util.Motion
         - YAHOO.util.Scroll
   
-  connection:
+  autocomplete:
     files:
-      - connection/connection-min
+      - <%=file :autocomplete %>
     meta:
       requires:
-        - YAHOO
+        - YAHOO.lang
+        - YAHOO.lang.JSON
+        - YAHOO.util
+        - YAHOO.util.Anim
+        - YAHOO.util.Connect
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+        - YAHOO.util.Get
+      provides:
+        - YAHOO.widget.AutoComplete
+        - YAHOO.widget.DS_JSArray
+        - YAHOO.widget.DS_JSFunction
+        - YAHOO.widget.DS_ScriptNode
+        - YAHOO.widget.DS_XHR
+        - YAHOO.widget.DataSource
+  
+  button:
+    files:
+      - <%=file :button %>
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.Dom
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+        - YAHOO.widget.Menu
+        - YAHOO.widget.MenuItem
+        - YAHOO.widget.MenuManager
+        - YAHOO.widget.Overlay
+        - YAHOO.widget.OverlayManager
+      provides:
+        - YAHOO.widget.Button
+        - YAHOO.widget.ButtonGroup
+  
+  calendar:
+    files:
+      - <%=file :calendar %>
+    meta:
+      requires:
+        - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util
-        - YAHOO.util.Event
         - YAHOO.util.CustomEvent
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+        - YAHOO.util.KeyListener
+      provides:
+        - YAHOO.widget.Cal2up
+        - YAHOO.widget.CalGrp
+        - YAHOO.widget.Cal_Core
+        - YAHOO.widget.Calendar
+        - YAHOO.widget.Calendar2up
+        - YAHOO.widget.CalendarGroup
+        - YAHOO.widget.CalendarNavigator
+        - YAHOO.widget.Calendar_Core
+        - YAHOO.widget.DateMath
+  
+  charts:
+    files:
+      - <%=file :charts %>
+    meta:
+      requires:
+        - YAHOO.lang.JSON
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.AttributeProvider
+        - YAHOO.util.DataSource
+        - YAHOO.util.Dom
+      provides:
+        - YAHOO.widget.FlashAdapter
+        - YAHOO.widget.Axis
+        - YAHOO.widget.BarChart
+        - YAHOO.widget.BarSeries
+        - YAHOO.widget.CartesianChart
+        - YAHOO.widget.CartesianSeries
+        - YAHOO.widget.CategoryAxis
+        - YAHOO.widget.Chart
+        - YAHOO.widget.Charts
+        - YAHOO.widget.ColumnChart
+        - YAHOO.widget.ColumnSeries
+        - YAHOO.widget.LineChart
+        - YAHOO.widget.LineSeries
+        - YAHOO.widget.NumericAxis
+        - YAHOO.widget.PieChart
+        - YAHOO.widget.PieSeries
+        - YAHOO.widget.Series
+        - YAHOO.widget.TimeAxis
+  
+  colorpicker:
+    files:
+      - <%=file :colorpicker %>
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Dom
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+        - YAHOO.widget.Panel
+        - YAHOO.widget.Slider
+      provides:
+        - YAHOO.util.Color
+        - YAHOO.widget.ColorPicker
+  
+  connection:
+    files:
+      - <%=file :connection %>
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.Event
       provides:
         - YAHOO.util.Connect
   
-  get:
+  container:
     files:
-      - get/get-beta-min
+      - <%=file :container %>
     meta:
       requires:
-        - YAHOO
-        - YAHOO.env
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Anim
+        - YAHOO.util.Connect
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.DD
+        - YAHOO.util.Dom
+        - YAHOO.util.Easing
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+        - YAHOO.util.KeyListener
+        - YAHOO.util.Motion
+        - YAHOO.util.Point
+      provides:
+        - YAHOO.widget.ContainerEffect
+        - YAHOO.widget.Dialog
+        - YAHOO.widget.Module
+        - YAHOO.widget.Overlay
+        - YAHOO.widget.OverlayManager
+        - YAHOO.widget.Panel
+        - YAHOO.widget.SimpleDialog
+        - YAHOO.widget.Tooltip
+  
+  datasource:
+    files:
+      - <%=file :datasource %>
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.lang.JSON
+        - YAHOO.util
+        - YAHOO.util.Connect
+        - YAHOO.util.EventProvider
+      provides:
+        - YAHOO.util.DataSource
+        - YAHOO.util.Number
+        - YAHOO.util.Date
+  
+  datatable:
+    files:
+      - <%=file :datatable %>
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.DD
+        - YAHOO.util.DataSource
+        - YAHOO.util.Dom
+        - YAHOO.util.DragDrop
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+        - YAHOO.widget.Button
+        - YAHOO.widget.Calendar
+      provides:
+        - YAHOO.util.ColumnResizer
+        - YAHOO.util.Sort
+        - YAHOO.widget.Column
+        - YAHOO.widget.ColumnSet
+        - YAHOO.widget.DataTable
+        - YAHOO.widget.Record
+        - YAHOO.widget.RecordSet
+  
+  dragdrop:
+    files:
+      - <%=file :dragdrop %>
+    meta:
+      requires:
+        - YAHOO.util
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+        - YAHOO.util.Point
+        - YAHOO.util.Region
+      provides:
+        - YAHOO.util.DD
+        - YAHOO.util.DDM
+        - YAHOO.util.DDProxy
+        - YAHOO.util.DDTarget
+        - YAHOO.util.DragDrop
+        - YAHOO.util.DragDropMgr
+  
+  editor:
+    files:
+      - <%=file :editor %>
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util.Anim
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.DD
+        - YAHOO.util.Dom
+        - YAHOO.util.Easing
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+        - YAHOO.util.Lang
+        - YAHOO.widget.Button
+        - YAHOO.widget.MenuItem
+        - YAHOO.widget.Overlay
+      provides:
+        - YAHOO.widget.Editor
+        - YAHOO.widget.EditorInfo
+        - YAHOO.widget.EditorWindow
+        - YAHOO.widget.SimpleEditor
+        - YAHOO.widget.Toolbar
+        - YAHOO.widget.ToolbarButton
+        - YAHOO.widget.ToolbarButtonAdvanced
+  
+  element:
+    files:
+      - <%=file :element %>
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+        - YAHOO.util.Lang
+      provides:
+        - YAHOO.util.Attribute
+        - YAHOO.util.AttributeProvider
+        - YAHOO.util.Element
+  
+  get:
+    files:
+      - <%=file :get %>
+    meta:
+      requires:
+        - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util
       provides:
         - YAHOO.util.Get
   
-  json:
+  history:
     files:
-      - json/json-beta-min
+      - <%=file :history %>
     meta:
       requires:
-        - YAHOO
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.Event
+      provides:
+        - YAHOO.util.History
+  
+  imageloader:
+    files:
+      - <%=file :imageloader %>
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+      provides:
+        - YAHOO.util.ImageLoader
+  
+  json:
+    files:
+      - <%=file :json %>
+    meta:
+      requires:
         - YAHOO.lang
       provides:
         - YAHOO.lang.JSON
   
-  history:
+  logger:
     files:
-      - history/history-min
+      - <%=file :logger %>
     meta:
       requires:
+        - YAHOO.lang
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.DD
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+      provides:
+        - YAHOO.widget.LogMsg
+        - YAHOO.widget.LogReader
+        - YAHOO.widget.LogWriter
+        - YAHOO.widget.Logger
+  
+  menu:
+    files:
+      - <%=file :menu %>
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+        - YAHOO.util.Region
+        - YAHOO.widget.Module
+        - YAHOO.widget.Overlay
+      provides:
+        - YAHOO.widget.ContextMenu
+        - YAHOO.widget.ContextMenuItem
+        - YAHOO.widget.Menu
+        - YAHOO.widget.MenuBar
+        - YAHOO.widget.MenuBarItem
+        - YAHOO.widget.MenuItem
+        - YAHOO.widget.MenuManager
+  
+  profiler:
+    files:
+      - <%=file :profiler %>
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util.Dom
+      provides:
+        - YAHOO.tool.Profiler
+  
+  selector:
+    files:
+      - <%=file :selector %>
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.util
+      provides:
+        - YAHOO.util.Selector
+  
+  slider:
+    files:
+      - <%=file :slider %>
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util.Anim
+        - YAHOO.util.DD
+        - YAHOO.util.Dom
+        - YAHOO.util.DragDrop
+        - YAHOO.util.Easing
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+        - YAHOO.util.Motion
+      provides:
+        - YAHOO.widget.Slider
+        - YAHOO.widget.SliderThumb
+  
+  tabview:
+    files:
+      - <%=file :tabview %>
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util.Connect
+        - YAHOO.util.Dom
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+      provides:
+        - YAHOO.widget.Tab
+        - YAHOO.widget.TabView
+  
+  treeview:
+    files:
+      - <%=file :treeview %>
+    meta:
+      requires:
+        - YAHOO.util.Anim
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+      provides:
+        - YAHOO.widget.HTMLNode
+        - YAHOO.widget.MenuNode
+        - YAHOO.widget.Node
+        - YAHOO.widget.RootNode
+        - YAHOO.widget.TVAnim
+        - YAHOO.widget.TVFadeIn
+        - YAHOO.widget.TVFadeOut
+        - YAHOO.widget.TextNode
+        - YAHOO.widget.TreeView
+  
+  yahoo-dom-event:
+    files:
+      - <%=file 'yahoo-dom-event' %>
+    meta:
+      provides:
         - YAHOO
         - YAHOO.env
+        - YAHOO.env.modules
+        - YAHOO.env.ua
+        - YAHOO.lang
         - YAHOO.util
-        - YAHOO.util.Event
         - YAHOO.util.CustomEvent
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+        - YAHOO.util.KeyListener
+        - YAHOO.util.Lang
+        - YAHOO.util.Point
+        - YAHOO.util.Region
+        - YAHOO.util.Subscriber
+  
+  yuiloader:
+    files:
+      - <%=file :yuiloader %>
+    meta:
+      requires:
+        - YAHOO.env
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util.Get
+        - YAHOO.util.Lang
       provides:
-        - YAHOO.util.History
-    
+        - YAHOO.util.YUILoader
+  
+  yuitest:
+    files:
+      - <%=file :yuitest %>
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+      provides:
+        - YAHOO.tool.TestCase
+        - YAHOO.tool.TestLogger
+        - YAHOO.tool.TestManager
+        - YAHOO.tool.TestRunner
+        - YAHOO.tool.TestSuite
+        - YAHOO.util.ArrayAssert
+        - YAHOO.util.Assert
+        - YAHOO.util.AssertionError
+        - YAHOO.util.ComparisonFailure
+        - YAHOO.util.DateAssert
+        - YAHOO.util.ObjectAssert
+        - YAHOO.util.ShouldError
+        - YAHOO.util.ShouldFail
+        - YAHOO.util.UnexpectedError
+        - YAHOO.util.UnexpectedValue
+        - YAHOO.util.UserAction
+
