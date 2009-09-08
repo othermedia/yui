@@ -15,8 +15,8 @@ packages:
       - animation/animation-min
     meta:
       requires:
-        - YAHOO.util
         - YAHOO.lang
+        - YAHOO.util
         - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
         - YAHOO.util.Event
@@ -102,7 +102,6 @@ packages:
       requires:
         - YAHOO.lang.JSON
         - YAHOO.lang
-        - YAHOO.util
         - YAHOO.util.AttributeProvider
         - YAHOO.util.DataSource
         - YAHOO.util.Dom
@@ -117,6 +116,7 @@ packages:
         - YAHOO.widget.Chart
         - YAHOO.widget.ColumnChart
         - YAHOO.widget.ColumnSeries
+        - YAHOO.widget.FlashAdapter
         - YAHOO.widget.LineChart
         - YAHOO.widget.LineSeries
         - YAHOO.widget.NumericAxis
@@ -194,8 +194,8 @@ packages:
         - YAHOO.util.EventProvider
       provides:
         - YAHOO.util.DataSource
-        - YAHOO.util.Number
         - YAHOO.util.Date
+        - YAHOO.util.Number
   
   datatable:
     files:
