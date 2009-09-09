@@ -584,7 +584,7 @@ packages:
   
   yuitest:
     files:
-      - yuitest/yuitest-beta-min
+      - yuitest/yuitest-min
     meta:
       requires:
         - YAHOO.env.ua
