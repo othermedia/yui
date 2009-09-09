@@ -273,7 +273,6 @@ packages:
         - YAHOO.widget.DataTable
         - YAHOO.widget.DateCellEditor
         - YAHOO.widget.DropdownCellEditor
-        - YAHOO.widget.Paginator
         - YAHOO.widget.RadioCellEditor
         - YAHOO.widget.Record
         - YAHOO.widget.RecordSet
