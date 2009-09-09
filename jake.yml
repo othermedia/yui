@@ -331,6 +331,7 @@ packages:
       - imagecropper/imagecropper-beta-min
     meta:
       requires:
+        - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
