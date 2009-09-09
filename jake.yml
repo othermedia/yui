@@ -51,7 +51,6 @@ packages:
         - YAHOO.widget.DS_JSFunction
         - YAHOO.widget.DS_ScriptNode
         - YAHOO.widget.DS_XHR
-        - YAHOO.widget.DataSource
   
   button:
     files:
