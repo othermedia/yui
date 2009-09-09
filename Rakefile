@@ -2,9 +2,7 @@ BUILD_DIR = File.join(File.dirname(__FILE__), 'build')
 
 task :deps do
   pkg = ENV['pkg']
-  file = ['-beta', '-experimental', ''].
-         map { |s| [pkg + s + '-min', pkg + s] }.
-         flatten.
+  file = [pkg + '-beta', pkg + '-experimental', pkg].
          map { |f| File.join(BUILD_DIR, pkg, f + '.js') }.
          find(&File.method(:file?))
   

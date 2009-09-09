@@ -33,6 +33,7 @@ packages:
       - autocomplete/autocomplete-min
     meta:
       requires:
+        - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util
         - YAHOO.util.CustomEvent
@@ -58,11 +59,13 @@ packages:
       requires:
         - YAHOO.env.ua
         - YAHOO.lang
+        - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
         - YAHOO.util.Element
         - YAHOO.util.Event
       uses:
         - YAHOO.widget.Menu
+        - YAHOO.widget.MenuItem
         - YAHOO.widget.MenuManager
         - YAHOO.widget.Overlay
         - YAHOO.widget.OverlayManager
@@ -102,6 +105,7 @@ packages:
         - YAHOO.lang.JSON
         - YAHOO.lang
         - YAHOO.util.AttributeProvider
+        - YAHOO.util.DataSource
         - YAHOO.util.Dom
       provides:
         - YAHOO.widget.Axis
@@ -113,7 +117,6 @@ packages:
         - YAHOO.widget.Chart
         - YAHOO.widget.ColumnChart
         - YAHOO.widget.ColumnSeries
-        - YAHOO.widget.FlashAdapter
         - YAHOO.widget.LineChart
         - YAHOO.widget.LineSeries
         - YAHOO.widget.NumericAxis
@@ -128,9 +131,11 @@ packages:
     meta:
       requires:
         - YAHOO.lang
+        - YAHOO.util
         - YAHOO.util.Dom
         - YAHOO.util.Element
         - YAHOO.util.Event
+        - YAHOO.widget.Panel
         - YAHOO.widget.Slider
       provides:
         - YAHOO.util.Color
@@ -181,6 +186,12 @@ packages:
   cookie:
     files:
       - cookie/cookie-beta-min
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+      provides:
+        - YAHOO.util.Cookie
   
   datasource:
     files:
@@ -203,8 +214,10 @@ packages:
       - datatable/datatable-beta-min
     meta:
       requires:
+        - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util
+        - YAHOO.util.AttributeProvider
         - YAHOO.util.DataSource
         - YAHOO.util.Dom
         - YAHOO.util.Element
@@ -212,14 +225,17 @@ packages:
         - YAHOO.util.EventProvider
       uses:
         - YAHOO.util.DD
+        - YAHOO.util.DDProxy
         - YAHOO.util.DragDrop
         - YAHOO.widget.Calendar
       provides:
         - YAHOO.util.ColumnResizer
         - YAHOO.util.Sort
         - YAHOO.widget.Column
+        - YAHOO.widget.ColumnDD
         - YAHOO.widget.ColumnSet
         - YAHOO.widget.DataTable
+        - YAHOO.widget.Paginator
         - YAHOO.widget.Record
         - YAHOO.widget.RecordSet
   
@@ -228,9 +244,12 @@ packages:
       - dragdrop/dragdrop-min
     meta:
       requires:
+        - YAHOO.env.ua
         - YAHOO.util
+        - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
         - YAHOO.util.Event
+        - YAHOO.util.EventProvider
         - YAHOO.util.Point
         - YAHOO.util.Region
       provides:
@@ -249,6 +268,7 @@ packages:
         - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util.Anim
+        - YAHOO.util.CustomEvent
         - YAHOO.util.DD
         - YAHOO.util.Dom
         - YAHOO.util.Easing
@@ -273,6 +293,7 @@ packages:
     meta:
       requires:
         - YAHOO.lang
+        - YAHOO.util
         - YAHOO.util.Dom
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
@@ -299,6 +320,7 @@ packages:
       requires:
         - YAHOO.env.ua
         - YAHOO.lang
+        - YAHOO.util
         - YAHOO.util.CustomEvent
         - YAHOO.util.Event
       provides:
@@ -307,6 +329,16 @@ packages:
   imagecropper:
     files:
       - imagecropper/imagecropper-beta-min
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.Dom
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+        - YAHOO.util.Resize
+      provides:
+        - YAHOO.widget.ImageCropper
   
   imageloader:
     files:
@@ -316,6 +348,7 @@ packages:
         - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util
+        - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
         - YAHOO.util.Event
       provides:
@@ -333,6 +366,23 @@ packages:
   layout:
     files:
       - layout/layout-beta-min
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.Dom
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+        - YAHOO.util.Selector
+      uses:
+        - YAHOO.util.Anim
+        - YAHOO.util.Easing
+        - YAHOO.util.Resize
+      provides:
+        - YAHOO.widget.Layout
+        - YAHOO.widget.LayoutUnit
   
   logger:
     files:
@@ -386,10 +436,42 @@ packages:
   profilerviewer:
     files:
       - profilerviewer/profilerviewer-beta-min
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.tool.Profiler
+        - YAHOO.util.DataSource
+        - YAHOO.util.Dom
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+        - YAHOO.util.YUILoader
+        - YAHOO.widget.BarChart
+        - YAHOO.widget.Chart
+        - YAHOO.widget.DataTable
+        - YAHOO.widget.NumericAxis
+      uses:
+        - YAHOO.util.DragDrop
+      provides:
+        - YAHOO.widget.ProfilerViewer
   
   resize:
     files:
       - resize/resize-beta-min
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.DD
+        - YAHOO.util.Dom
+        - YAHOO.util.DragDrop
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+      uses:
+        - YAHOO.util.Anim
+        - YAHOO.util.Easing
+      provides:
+        - YAHOO.util.Resize
   
   selector:
     files:
@@ -416,6 +498,7 @@ packages:
         - YAHOO.util.EventProvider
         - YAHOO.util.Motion
       provides:
+        - YAHOO.widget.DualSlider
         - YAHOO.widget.Slider
         - YAHOO.widget.SliderThumb
   
@@ -439,6 +522,7 @@ packages:
       - treeview/treeview-min
     meta:
       requires:
+        - YAHOO.util.Event
         - YAHOO.util.EventProvider
       uses:
         - YAHOO.util.Anim
@@ -456,6 +540,12 @@ packages:
   uploader:
     files:
       - uploader/uploader-experimental-min
+    meta:
+      requires:
+        - YAHOO.util.AttributeProvider
+        - YAHOO.util.Dom
+      provides:
+        - YAHOO.widget.Uploader
   
   yahoo-dom-event:
     files:
@@ -496,14 +586,19 @@ packages:
       - yuitest/yuitest-beta-min
     meta:
       requires:
+        - YAHOO.env.ua
+        - YAHOO.lang.JSON
         - YAHOO.lang
         - YAHOO.util.Dom
+        - YAHOO.util.Event
         - YAHOO.util.EventProvider
         - YAHOO.widget.LogReader
       provides:
         - YAHOO.tool.TestCase
+        - YAHOO.tool.TestFormat
         - YAHOO.tool.TestLogger
         - YAHOO.tool.TestManager
+        - YAHOO.tool.TestReporter
         - YAHOO.tool.TestRunner
         - YAHOO.tool.TestSuite
         - YAHOO.util.ArrayAssert
