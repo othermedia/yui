@@ -96,6 +96,10 @@ packages:
         - YAHOO.widget.Calendar_Core
         - YAHOO.widget.DateMath
   
+  carousel:
+    files:
+      - carousel/carousel-beta-min
+  
   charts:
     files:
       - charts/charts-experimental-min
@@ -185,7 +189,7 @@ packages:
   
   cookie:
     files:
-      - cookie/cookie-beta-min
+      - cookie/cookie-min
     meta:
       requires:
         - YAHOO.lang
@@ -195,7 +199,7 @@ packages:
   
   datasource:
     files:
-      - datasource/datasource-beta-min
+      - datasource/datasource-min
     meta:
       requires:
         - YAHOO.lang
@@ -211,7 +215,7 @@ packages:
   
   datatable:
     files:
-      - datatable/datatable-beta-min
+      - datatable/datatable-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -262,7 +266,7 @@ packages:
   
   editor:
     files:
-      - editor/editor-beta-min
+      - editor/editor-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -365,7 +369,7 @@ packages:
   
   layout:
     files:
-      - layout/layout-beta-min
+      - layout/layout-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -424,9 +428,13 @@ packages:
         - YAHOO.widget.MenuItem
         - YAHOO.widget.MenuManager
   
+  paginator:
+    files:
+      - paginator/paginator-min
+  
   profiler:
     files:
-      - profiler/profiler-beta-min
+      - profiler/profiler-min
     meta:
       requires:
         - YAHOO.lang
@@ -456,7 +464,7 @@ packages:
   
   resize:
     files:
-      - resize/resize-beta-min
+      - resize/resize-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -572,7 +580,7 @@ packages:
   
   yuiloader:
     files:
-      - yuiloader/yuiloader-beta-min
+      - yuiloader/yuiloader-min
     meta:
       requires:
         - YAHOO.env
