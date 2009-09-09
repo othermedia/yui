@@ -36,15 +36,15 @@ packages:
         - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util.CustomEvent
+        - YAHOO.util.DataSourceBase
         - YAHOO.util.Dom
         - YAHOO.util.Event
-      uses:
-        - YAHOO.util.Anim
-        - YAHOO.util.DataSourceBase
         - YAHOO.util.FunctionDataSource
         - YAHOO.util.LocalDataSource
         - YAHOO.util.ScriptNodeDataSource
         - YAHOO.util.XHRDataSource
+      uses:
+        - YAHOO.util.Anim
       provides:
         - YAHOO.widget.AutoComplete
         - YAHOO.widget.DS_JSArray
@@ -107,9 +107,10 @@ packages:
         - YAHOO.lang
         - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
-        - YAHOO.util.Easing
         - YAHOO.util.Element
         - YAHOO.util.Event
+      uses:
+        - YAHOO.util.Easing
         - YAHOO.util.Motion
       provides:
         - YAHOO.widget.Carousel
@@ -587,9 +588,9 @@ packages:
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
         - YAHOO.util.KeyListener
-        - YAHOO.widget.Calendar
       uses:
         - YAHOO.util.Anim
+        - YAHOO.widget.Calendar
       provides:
         - YAHOO.widget.DateNode
         - YAHOO.widget.HTMLNode
