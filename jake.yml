@@ -33,16 +33,18 @@ packages:
       - autocomplete/autocomplete-min
     meta:
       requires:
+        - YAHOO.env.ua
         - YAHOO.lang
-        - YAHOO.util
         - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
         - YAHOO.util.Event
       uses:
-        - YAHOO.lang.JSON
         - YAHOO.util.Anim
-        - YAHOO.util.Connect
-        - YAHOO.util.Get
+        - YAHOO.util.DataSourceBase
+        - YAHOO.util.FunctionDataSource
+        - YAHOO.util.LocalDataSource
+        - YAHOO.util.ScriptNodeDataSource
+        - YAHOO.util.XHRDataSource
       provides:
         - YAHOO.widget.AutoComplete
         - YAHOO.widget.DS_JSArray
@@ -99,6 +101,18 @@ packages:
   carousel:
     files:
       - carousel/carousel-beta-min
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util.CustomEvent
+        - YAHOO.util.Dom
+        - YAHOO.util.Easing
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+        - YAHOO.util.Motion
+      provides:
+        - YAHOO.widget.Carousel
   
   charts:
     files:
@@ -126,6 +140,10 @@ packages:
         - YAHOO.widget.PieChart
         - YAHOO.widget.PieSeries
         - YAHOO.widget.Series
+        - YAHOO.widget.StackedBarChart
+        - YAHOO.widget.StackedBarSeries
+        - YAHOO.widget.StackedColumnChart
+        - YAHOO.widget.StackedColumnSeries
         - YAHOO.widget.TimeAxis
   
   colorpicker:
@@ -204,14 +222,22 @@ packages:
       requires:
         - YAHOO.lang
         - YAHOO.util
+        - YAHOO.util.Event
         - YAHOO.util.EventProvider
       uses:
         - YAHOO.lang.JSON
         - YAHOO.util.Connect
+        - YAHOO.util.Get
       provides:
         - YAHOO.util.DataSource
+        - YAHOO.util.DataSourceBase
         - YAHOO.util.Date
+        - YAHOO.util.DateLocale
+        - YAHOO.util.FunctionDataSource
+        - YAHOO.util.LocalDataSource
         - YAHOO.util.Number
+        - YAHOO.util.ScriptNodeDataSource
+        - YAHOO.util.XHRDataSource
   
   datatable:
     files:
@@ -223,10 +249,13 @@ packages:
         - YAHOO.util
         - YAHOO.util.AttributeProvider
         - YAHOO.util.DataSource
+        - YAHOO.util.DataSourceBase
+        - YAHOO.util.Date
         - YAHOO.util.Dom
         - YAHOO.util.Element
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
+        - YAHOO.util.Number
       uses:
         - YAHOO.util.DD
         - YAHOO.util.DDProxy
@@ -235,13 +264,22 @@ packages:
       provides:
         - YAHOO.util.ColumnResizer
         - YAHOO.util.Sort
+        - YAHOO.widget.BaseCellEditor
+        - YAHOO.widget.CellEditor
+        - YAHOO.widget.CheckboxCellEditor
         - YAHOO.widget.Column
         - YAHOO.widget.ColumnDD
         - YAHOO.widget.ColumnSet
         - YAHOO.widget.DataTable
+        - YAHOO.widget.DateCellEditor
+        - YAHOO.widget.DropdownCellEditor
         - YAHOO.widget.Paginator
+        - YAHOO.widget.RadioCellEditor
         - YAHOO.widget.Record
         - YAHOO.widget.RecordSet
+        - YAHOO.widget.ScrollingDataTable
+        - YAHOO.widget.TextareaCellEditor
+        - YAHOO.widget.TextboxCellEditor
   
   dragdrop:
     files:
@@ -252,6 +290,7 @@ packages:
         - YAHOO.util
         - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
+        - YAHOO.util.Element
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
         - YAHOO.util.Point
@@ -278,6 +317,7 @@ packages:
         - YAHOO.util.Easing
         - YAHOO.util.Element
         - YAHOO.util.Event
+        - YAHOO.util.Resize
         - YAHOO.widget.Button
         - YAHOO.widget.MenuItem
         - YAHOO.widget.Overlay
@@ -375,6 +415,7 @@ packages:
         - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util
+        - YAHOO.util.Connect
         - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
         - YAHOO.util.Element
@@ -393,6 +434,7 @@ packages:
       - logger/logger-min
     meta:
       requires:
+        - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
@@ -416,7 +458,6 @@ packages:
         - YAHOO.util.Dom
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
-        - YAHOO.util.Region
         - YAHOO.widget.Module
         - YAHOO.widget.Overlay
       provides:
@@ -431,6 +472,16 @@ packages:
   paginator:
     files:
       - paginator/paginator-min
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util.AttributeProvider
+        - YAHOO.util.Dom
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+        - YAHOO.util.EventProvider
+      provides:
+        - YAHOO.widget.Paginator
   
   profiler:
     files:
@@ -532,11 +583,15 @@ packages:
       - treeview/treeview-min
     meta:
       requires:
+        - YAHOO.util.Dom
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
+        - YAHOO.util.KeyListener
+        - YAHOO.widget.Calendar
       uses:
         - YAHOO.util.Anim
       provides:
+        - YAHOO.widget.DateNode
         - YAHOO.widget.HTMLNode
         - YAHOO.widget.MenuNode
         - YAHOO.widget.Node
@@ -552,6 +607,7 @@ packages:
       - uploader/uploader-experimental-min
     meta:
       requires:
+        - YAHOO.lang
         - YAHOO.util.AttributeProvider
         - YAHOO.util.Dom
       provides:
@@ -586,6 +642,8 @@ packages:
         - YAHOO.env
         - YAHOO.env.ua
         - YAHOO.lang
+        - YAHOO.util.Connect
+        - YAHOO.util.Event
         - YAHOO.util.Get
         - YAHOO.util.Lang
       provides:

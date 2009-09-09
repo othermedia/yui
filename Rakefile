@@ -7,8 +7,10 @@ task :deps do
          find(&File.method(:file?))
   
   File.read(file).
-  scan(/\b(?:YAHOO|Y)(?:\.[A-Za-z0-9\_\$]+)+(?:\s*=)?/).
-  flatten.uniq.sort.
+  scan(/\b(?:YAHOO|Y|lang|util|widget|tool)(?:\.[A-Za-z0-9\_\$]+)+(?:\s*=)?/).
+  flatten.
+  map { |s| s.gsub(/^YAHOO\./, '') }.
+  uniq.sort.
   each(&method(:puts))
 end
 
