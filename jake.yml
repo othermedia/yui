@@ -312,6 +312,7 @@ packages:
         - YAHOO.util.Anim
         - YAHOO.util.CustomEvent
         - YAHOO.util.DD
+        - YAHOO.util.DDProxy
         - YAHOO.util.Dom
         - YAHOO.util.Easing
         - YAHOO.util.Element
@@ -457,6 +458,7 @@ packages:
         - YAHOO.util.Dom
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
+        - YAHOO.util.KeyListener
         - YAHOO.widget.Module
         - YAHOO.widget.Overlay
       provides:
@@ -540,6 +542,7 @@ packages:
         - YAHOO.env.ua
         - YAHOO.lang
         - YAHOO.util
+        - YAHOO.util.Dom
       provides:
         - YAHOO.util.Selector
   
@@ -565,6 +568,12 @@ packages:
   stylesheet:
     files:
       - stylesheet/stylesheet-min
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+      provides:
+        - YAHOO.util.StyleSheet
   
   tabview:
     files:
@@ -572,6 +581,7 @@ packages:
     meta:
       requires:
         - YAHOO.lang
+        - YAHOO.util
         - YAHOO.util.Dom
         - YAHOO.util.Element
         - YAHOO.util.Event
@@ -586,11 +596,13 @@ packages:
       - treeview/treeview-min
     meta:
       requires:
+        - YAHOO.lang
         - YAHOO.util.Dom
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
         - YAHOO.util.KeyListener
       uses:
+        - YAHOO.lang.JSON
         - YAHOO.util.Anim
         - YAHOO.widget.Calendar
       provides:
@@ -600,8 +612,6 @@ packages:
         - YAHOO.widget.Node
         - YAHOO.widget.RootNode
         - YAHOO.widget.TVAnim
-        - YAHOO.widget.TVFadeIn
-        - YAHOO.widget.TVFadeOut
         - YAHOO.widget.TextNode
         - YAHOO.widget.TreeView
   
