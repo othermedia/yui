@@ -611,7 +611,6 @@ packages:
         - YAHOO.widget.MenuNode
         - YAHOO.widget.Node
         - YAHOO.widget.RootNode
-        - YAHOO.widget.TVAnim
         - YAHOO.widget.TextNode
         - YAHOO.widget.TreeView
   
