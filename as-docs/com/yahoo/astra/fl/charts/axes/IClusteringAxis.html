@@ -77,8 +77,31 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 </td><td class="summaryTableOwnerCol">IClusteringAxis</td>
 </tr>
 <tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#dataProvider">dataProvider</a> : Array<div class="summaryTableDescription">
+   Data used in determining the axis scale
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedProperty">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#labelFunction">labelFunction</a> : Function<div class="summaryTableDescription">
    A function may be set to determine the text value of the labels.</div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#labelSpacing">labelSpacing</a> : Number<div class="summaryTableDescription">
+   The space, in pixels, between labels on an axis.</div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#maxLabelHeight">maxLabelHeight</a> : Number<div class="summaryTableDescription">
+   Gets or sets the maximum width of a label
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#maxLabelWidth">maxLabelWidth</a> : Number<div class="summaryTableDescription">
+   Gets or sets the maximum width of a label
+   </div>
 </td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
 </tr>
 <tr class="hideInheritedProperty">
@@ -118,7 +141,15 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <tr class="hideInheritedMethod">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="IAxis.html#updateScale()">updateScale</a>(data:Array):void</div>
+<a class="signatureLink" href="IAxis.html#getMaxLabel()">getMaxLabel</a>():String</div>
+<div class="summaryTableDescription">
+   Returns the maximum string length of a label on the axis.</div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="IAxis.html#updateScale()">updateScale</a>():void</div>
 <div class="summaryTableDescription">
    Determines the axis scale based on the input data set.</div>
 </td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>

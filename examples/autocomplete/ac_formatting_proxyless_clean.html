@@ -1,6 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <title>Custom Formatting, with a Proxyless Remote DataSource</title>
 
@@ -18,7 +20,8 @@ body {
 
 <link rel="stylesheet" type="text/css" href="../../build/fonts/fonts-min.css" />
 <link rel="stylesheet" type="text/css" href="../../build/autocomplete/assets/skins/sam/autocomplete.css" />
-<script type="text/javascript" src="../../build/utilities/utilities.js"></script>
+<script type="text/javascript" src="../../build/yuiloader-dom-event/yuiloader-dom-event.js"></script>
+<script type="text/javascript" src="../../build/animation/animation-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
 <script type="text/javascript" src="../../build/autocomplete/autocomplete-min.js"></script>
 
@@ -47,14 +50,16 @@ body {
 <h1>Custom Formatting, with a Proxyless Remote DataSource</h1>
 
 <div class="exampleIntro">
-	<p>This AutoComplete instance uses a ScriptNodeDataSource to point to the Yahoo! Audio Search webservice without a proxy. The generateRequest() method must be customized to comply with the third-party API. Please note that the ScriptNodeDataSource requires that the webservice support a callback mechanism.</p>
+	<p>This AutoComplete instance uses a ScriptNodeDataSource to point to the Yahoo! Video Search webservice without a proxy. The generateRequest() method must be customized to comply with the third-party API. Please note that the ScriptNodeDataSource requires that the webservice support a callback mechanism.</p>
+
+<p>A custom formatter function is defined in order to show thumbnail images in the results container.</p>
 			
 </div>
 
 <!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->
 
-<form action="http://audio.search.yahoo.com/search/audio" onsubmit="return YAHOO.example.CustomFormatting.validateForm();">
-	<h3>Yahoo! Audio Search:</h3>
+<form action="http://video.search.yahoo.com/search/video" onsubmit="return YAHOO.example.CustomFormatting.validateForm();">
+	<h3>Yahoo! Video Search:</h3>
 	<div id="myAutoComplete">
 		<input id="myInput" type="text" name="p">
 		<div id="myContainer"></div>
@@ -64,10 +69,10 @@ body {
 <script type="text/javascript">
 YAHOO.example.CustomFormatting = (function(){
     // Instantiate DataSource
-    var oDS = new YAHOO.util.ScriptNodeDataSource("http://search.yahooapis.com/AudioSearchService/V1/artistSearch");
+    var oDS = new YAHOO.util.ScriptNodeDataSource("http://search.yahooapis.com/VideoSearchService/V1/videoSearch");
     oDS.responseSchema = {
         resultsList: "ResultSet.Result",
-        fields: ["Name","Thumbnail"]
+        fields: ["Title","Thumbnail"]
     };
     // Setting to default value for demonstration purposes.
     // The webservice needs to support execution of a callback function.
@@ -77,7 +82,21 @@ YAHOO.example.CustomFormatting = (function(){
     var oAC = new YAHOO.widget.AutoComplete("myInput","myContainer", oDS);
     // The webservice needs custom parameters
     oAC.generateRequest = function(sQuery) {
-        return "?appid=YahooDemo&output=json&artist=" + sQuery ;
+        return "?appid=YahooDemo&output=json&query=" + sQuery ;
+    };
+    // Result data passed as object for easy access from custom formatter.
+    oAC.resultTypeList = false;
+    // Customize formatter to show thumbnail images
+    oAC.formatResult = function(oResultData, sQuery, sResultMatch) {
+        var img = "", nonimg = "";
+        var oThumbnail = oResultData.Thumbnail;
+        if(oThumbnail && (oThumbnail !== "")) {
+            img = "<img src=\""+ oThumbnail.Url + "\">";
+        }
+        else {
+            img = "<span class=\"img\"><span class=\"imgtext\">N/A</span></span>";
+        }
+        return "<div class=\"result\">" + img + "&nbsp;<span class=\"name\">" + sResultMatch + "</span></div>";
     };
 
     // Stub for form validation
@@ -98,3 +117,4 @@ YAHOO.example.CustomFormatting = (function(){
 
 </body>
 </html>
+<!-- presentbright.corp.yahoo.com uncompressed/chunked Thu Feb 19 10:53:05 PST 2009 -->

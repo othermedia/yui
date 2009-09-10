@@ -1,6 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <title>Advanced Uploader Example With Transparent UI and Automatic Queue Management</title>
 
@@ -19,8 +21,8 @@ body {
 <link rel="stylesheet" type="text/css" href="../../build/fonts/fonts-min.css" />
 <link rel="stylesheet" type="text/css" href="../../build/datatable/assets/skins/sam/datatable.css" />
 <script type="text/javascript" src="../../build/yahoo-dom-event/yahoo-dom-event.js"></script>
-<script type="text/javascript" src="../../build/element/element-beta-min.js"></script>
-<script type="text/javascript" src="../../build/uploader/uploader-experimental.js"></script>
+<script type="text/javascript" src="../../build/element/element-min.js"></script>
+<script type="text/javascript" src="../../build/uploader/uploader.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-min.js"></script>
 
@@ -165,8 +167,10 @@ YAHOO.util.Dom.setStyle(overlay, 'height', uiLayer.bottom-uiLayer.top + "px");
 	// Fired when the user selects files in the "Browse" dialog
 	// and clicks "Ok".
 	function onFileSelect(event) {
-		fileList = event.fileList;
-		createDataTable(fileList);
+		if(YAHOO.lang.hasOwnProperty(event, fileList) && event.fileList != null) {
+			fileList = event.fileList;
+			createDataTable(fileList);
+		}
 	}
 
 	function createDataTable(entries) {
@@ -247,3 +251,4 @@ YAHOO.util.Dom.setStyle(overlay, 'height', uiLayer.bottom-uiLayer.top + "px");
 
 </body>
 </html>
+<!-- presentbright.corp.yahoo.com uncompressed/chunked Thu Feb 19 10:53:20 PST 2009 -->

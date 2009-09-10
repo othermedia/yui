@@ -99,7 +99,7 @@ packages:
   
   carousel:
     files:
-      - carousel/carousel-beta-min
+      - carousel/carousel-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -116,7 +116,7 @@ packages:
   
   charts:
     files:
-      - charts/charts-experimental-min
+      - charts/charts-min
     meta:
       requires:
         - YAHOO.lang.JSON
@@ -331,7 +331,7 @@ packages:
   
   element:
     files:
-      - element/element-beta-min
+      - element/element-min
     meta:
       requires:
         - YAHOO.lang
@@ -370,7 +370,7 @@ packages:
   
   imagecropper:
     files:
-      - imagecropper/imagecropper-beta-min
+      - imagecropper/imagecropper-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -493,7 +493,7 @@ packages:
   
   profilerviewer:
     files:
-      - profilerviewer/profilerviewer-beta-min
+      - profilerviewer/profilerviewer-min
     meta:
       requires:
         - YAHOO.lang
@@ -534,7 +534,7 @@ packages:
   
   selector:
     files:
-      - selector/selector-beta-min
+      - selector/selector-min
     meta:
       requires:
         - YAHOO.env.ua
@@ -561,6 +561,10 @@ packages:
         - YAHOO.widget.DualSlider
         - YAHOO.widget.Slider
         - YAHOO.widget.SliderThumb
+  
+  stylesheet:
+    files:
+      - stylesheet/stylesheet-min
   
   tabview:
     files:
@@ -603,7 +607,7 @@ packages:
   
   uploader:
     files:
-      - uploader/uploader-experimental-min
+      - uploader/uploader-min
     meta:
       requires:
         - YAHOO.lang

@@ -631,3 +631,4 @@
 	}
 	
 }());
+YAHOO.register("containerariaplugin", YAHOO.widget.Module, {version: "@VERSION@", build: "@BUILD@"});

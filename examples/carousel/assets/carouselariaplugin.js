@@ -302,7 +302,6 @@
 	
 		var oNavigation = getCarouselNavElement.call(this),
 			aToolBarButtons = [],
-			nCurrentButtonIndex,
 			oFirstChild,
 			oList,
 			sListID;
@@ -499,3 +498,4 @@
 	}, "initAttributes", "_setUseARIA", "_setLabelledBy", "_setDescribedBy");
 
 }());
+YAHOO.register("carouselariaplugin", YAHOO.widget.Carousel, {version: "@VERSION@", build: "@BUILD@"});

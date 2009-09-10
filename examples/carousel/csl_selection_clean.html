@@ -1,6 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <title>Spotlight example</title>
 
@@ -19,8 +21,8 @@ body {
 <link rel="stylesheet" type="text/css" href="../../build/fonts/fonts-min.css" />
 <link rel="stylesheet" type="text/css" href="../../build/carousel/assets/skins/sam/carousel.css" />
 <script type="text/javascript" src="../../build/yahoo-dom-event/yahoo-dom-event.js"></script>
-<script type="text/javascript" src="../../build/element/element-beta-min.js"></script>
-<script type="text/javascript" src="../../build/carousel/carousel-beta-min.js"></script>
+<script type="text/javascript" src="../../build/element/element-min.js"></script>
+<script type="text/javascript" src="../../build/carousel/carousel-min.js"></script>
 
 
 <!--begin custom header content for this example-->
@@ -46,10 +48,6 @@ body {
     
     .yui-carousel-element .yui-carousel-item-selected {
         opacity: 1;
-    }
-
-    .yui-skin-sam .yui-carousel-nav ul li {
-        margin: 0;
     }
 </style>
 
@@ -136,8 +134,6 @@ body {
 </style>
 <script>
     (function () {
-        var carousel;
-                        
         // Get the image link from within its (parent) container.
         function getImage(parent) {
             var el = parent.firstChild;
@@ -155,27 +151,20 @@ body {
         }
                 
         YAHOO.util.Event.onDOMReady(function (ev) {
-            var el, item,
-                spotlight   = YAHOO.util.Dom.get("spotlight"),
+            var spotlight   = YAHOO.util.Dom.get("spotlight"),
                 carousel    = new YAHOO.widget.Carousel("container");
-                
-            carousel.render(); // get ready for rendering the widget
-            carousel.show();   // display the widget
-                    
-            // display the first selected item in the spotlight
-            item = carousel.getElementForItem(carousel.get("selectedItem"));
-            if (item) {
-                spotlight.innerHTML = "<img src=\"" + getImage(item) + "\">";
-            }
                        
             carousel.on("itemSelected", function (index) {
                 // item has the reference to the Carousel's item
-                item = carousel.getElementForItem(index);
+                var item = carousel.getElementForItem(index);
 
                 if (item) {
                     spotlight.innerHTML = "<img src=\""+getImage(item)+"\">";
                 }
             });
+                
+            carousel.render(); // get ready for rendering the widget
+            carousel.show();   // display the widget
         });
     })();
 </script>
@@ -184,3 +173,4 @@ body {
 
 </body>
 </html>
+<!-- presentbright.corp.yahoo.com uncompressed/chunked Thu Feb 19 10:53:08 PST 2009 -->

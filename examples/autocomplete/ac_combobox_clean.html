@@ -1,8 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>Combo Box</title>
+<title>Combobox, with CSS for Multiple Stacked Instances</title>
 
 <style type="text/css">
 /*margin and padding on body element
@@ -21,7 +23,7 @@ body {
 <link rel="stylesheet" type="text/css" href="../../build/autocomplete/assets/skins/sam/autocomplete.css" />
 <script type="text/javascript" src="../../build/yahoo-dom-event/yahoo-dom-event.js"></script>
 <script type="text/javascript" src="../../build/animation/animation-min.js"></script>
-<script type="text/javascript" src="../../build/element/element-beta-min.js"></script>
+<script type="text/javascript" src="../../build/element/element-min.js"></script>
 <script type="text/javascript" src="../../build/button/button-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
 <script type="text/javascript" src="../../build/autocomplete/autocomplete-min.js"></script>
@@ -51,10 +53,15 @@ body {
 <body class=" yui-skin-sam">
 
 
-<h1>Combo Box</h1>
+<h1>Combobox, with CSS for Multiple Stacked Instances</h1>
 
 <div class="exampleIntro">
-	<p>This "combo box" AutoComplete implementation allows the user to pick an item from a set list or enter a custom value directly into the input field. There are also some CSS customizations which must be made to support multiple stacked AutoComplete instances, which this example demonstrates.</p>
+	<p>This "combo box" AutoComplete implementation allows the user to pick an item from a set list or enter a custom value directly into the input field. Please note the following custom CSS:</p>
+
+<ul>
+    <li>z-index has been applied to support multiple vertically stacked AutoComplete instances</li>
+    <li>the input field and container have been styled to support a button inline to the right</li>
+</ul>
 			
 </div>
 
@@ -185,3 +192,4 @@ YAHOO.example.Combobox = function() {
 
 </body>
 </html>
+<!-- presentbright.corp.yahoo.com uncompressed/chunked Thu Feb 19 10:53:05 PST 2009 -->

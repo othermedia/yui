@@ -1,8 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<html xmlns:yui="http://yuilibrary.com/rdf/1.0/yui.rdf#">
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<title>API: json  JSON   (YUI Library)</title>
-	<link rel="stylesheet" type="text/css" href="assets/api.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/reset-fonts-grids-min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/api.css" />
+
     <script type="text/javascript" src="assets/api-js"></script>
     <script type="text/javascript" src="assets/ac-js"></script>
 </head>
@@ -10,27 +14,33 @@
 <body id="yahoo-com">
 
 <div id="doc3" class="yui-t2">
-
 	<div id="hd">
-        <a href="http://developer.yahoo.com/yui/"><h1>Yahoo! UI Library</h1></a>
-        <h3>json&nbsp; <span class="subtitle">2.6.0</span></h3>
-        <p>
-        <a href="./index.html">Yahoo! UI Library</a> 
-            &gt; <a href="./module_json.html">json</a>
+        <h1><a href="http://developer.yahoo.com/yui/" title="Yahoo! UI Library">Yahoo! UI Library</a></h1>
+        <h3>json&nbsp; <span class="subtitle">2.7.0</span></h3>
+        <a href="./index.html" title="Yahoo! UI Library">Yahoo! UI Library</a> 
+            &gt; <a href="./module_json.html" title="json">json</a>
                  &gt; JSON 
                 
-            </p>
-
-
+        <form onsubmit="return false">
+            <div id="propertysearch">
+                Search: <input autocomplete="off" id="searchinput" />
+                <div id="searchresults">
+                    &nbsp;
+                </div>
+            </div>
+        </form>
 	</div>
 
 	<div id="bd">
 		<div id="yui-main">
 			<div class="yui-b">
-            <form name="yui-classopts-form">
-    <span id="classopts"><input type="checkbox" name="showprivate" id="showprivate" /> <label for="showprivate">Show Private</label></span>
-    <span id="classopts"><input type="checkbox" name="showprotected" id="showprotected" /> <label for="showprotected">Show Protected</label></span>
-    <span id="classopts"><input type="checkbox" name="showdeprecated" id="showdeprecated" /> <label for="showdeprecated">Show Deprecated</label></span>
+            <form action="#" name="yui-classopts-form" method="get" id="yui-classopts-form">
+                <fieldset>
+                    <legend>Filters</legend>
+                <span class="classopts"><input type="checkbox" name="show_private" id="show_private" /> <label for="show_private">Show Private</label></span>
+                <span class="classopts"><input type="checkbox" name="show_protected" id="show_protected" /> <label for="show_protected">Show Protected</label></span>
+                <span class="classopts"><input type="checkbox" name="show_deprecated" id="show_deprecated" /> <label for="show_deprecated">Show Deprecated</label></span>
+                </fieldset>
             </form>
 
                     <h2>
@@ -38,34 +48,31 @@
 
                         <code>static</code>
                         
-                            Class <b>JSON</b>
+                            Class <b property="yui:name">JSON</b>
                         <span class="extends">
                         </span>
 
-                        <span class="extends">
-                        </span>
-                        
-                        </code>
                     </h2>
                     <!-- class tree goes here -->
                     
                 
   
 
-                    <div class="summary description">
+                    <div class="summary description" property="yui:description">
                         Provides methods to parse JSON strings and convert objects to JSON strings.
                     </div>
 
-
+                    
+                    <div rel="yui:properties" resource="#properties">
                         <div class="section field details">
                             <h3 id="properties">Properties</h3>
                             <div class="content">
-                                    <div class="private">
-                                    <h4><a name="property__BRACKETS">_BRACKETS</a>
-                                        <code>- private static {RegExp}</code>
+                                    <div class="private" rel="yui:property" resource="#property__BRACKETS">
+                                    <h4><a name="property__BRACKETS" property="yui:name">_BRACKETS</a>
+                                        - <code>private static <span property="yui:type">{RegExp}</span></code>
                                     </h4>
                                     <div class="detail">
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Third step in the validation.  Regex used to remove all open square
 brackets following a colon, comma, or at the beginning of the string.
                                         </div>
@@ -76,12 +83,12 @@ brackets following a colon, comma, or at the beginning of the string.
 
                                     <hr />
                                     </div>
-                                    <div class="private">
-                                    <h4><a name="property__CHARS">_CHARS</a>
-                                        <code>- private static {Object}</code>
+                                    <div class="private" rel="yui:property" resource="#property__CHARS">
+                                    <h4><a name="property__CHARS" property="yui:name">_CHARS</a>
+                                        - <code>private static <span property="yui:type">{Object}</span></code>
                                     </h4>
                                     <div class="detail">
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Character substitution map for common escapes and special characters.
                                         </div>
                                     </div>
@@ -91,12 +98,12 @@ brackets following a colon, comma, or at the beginning of the string.
 
                                     <hr />
                                     </div>
-                                    <div class="private">
-                                    <h4><a name="property__ESCAPES">_ESCAPES</a>
-                                        <code>- private static {RegExp}</code>
+                                    <div class="private" rel="yui:property" resource="#property__ESCAPES">
+                                    <h4><a name="property__ESCAPES" property="yui:name">_ESCAPES</a>
+                                        - <code>private static <span property="yui:type">{RegExp}</span></code>
                                     </h4>
                                     <div class="detail">
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             First step in the validation.  Regex used to replace all escape
 sequences (i.e. "\\", etc) with '@' characters (a non-JSON character).
                                         </div>
@@ -107,12 +114,12 @@ sequences (i.e. "\\", etc) with '@' characters (a non-JSON character).
 
                                     <hr />
                                     </div>
-                                    <div class="private">
-                                    <h4><a name="property__INVALID">_INVALID</a>
-                                        <code>- private static {RegExp}</code>
+                                    <div class="private" rel="yui:property" resource="#property__INVALID">
+                                    <h4><a name="property__INVALID" property="yui:name">_INVALID</a>
+                                        - <code>private static <span property="yui:type">{RegExp}</span></code>
                                     </h4>
                                     <div class="detail">
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Final step in the validation.  Regex used to test the string left after
 all previous replacements for invalid characters.
                                         </div>
@@ -123,12 +130,12 @@ all previous replacements for invalid characters.
 
                                     <hr />
                                     </div>
-                                    <div class="private">
-                                    <h4><a name="property__SPECIAL_CHARS">_SPECIAL_CHARS</a>
-                                        <code>- private static {RegExp}</code>
+                                    <div class="private" rel="yui:property" resource="#property__SPECIAL_CHARS">
+                                    <h4><a name="property__SPECIAL_CHARS" property="yui:name">_SPECIAL_CHARS</a>
+                                        - <code>private static <span property="yui:type">{RegExp}</span></code>
                                     </h4>
                                     <div class="detail">
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Regex used to replace special characters in strings for JSON
 stringification.
                                         </div>
@@ -139,12 +146,12 @@ stringification.
 
                                     <hr />
                                     </div>
-                                    <div class="private">
-                                    <h4><a name="property__UNICODE_EXCEPTIONS">_UNICODE_EXCEPTIONS</a>
-                                        <code>- private {RegExp}</code>
+                                    <div class="private" rel="yui:property" resource="#property__UNICODE_EXCEPTIONS">
+                                    <h4><a name="property__UNICODE_EXCEPTIONS" property="yui:name">_UNICODE_EXCEPTIONS</a>
+                                        - <code>private <span property="yui:type">{RegExp}</span></code>
                                     </h4>
                                     <div class="detail">
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Replace certain Unicode characters that JavaScript may handle incorrectly
 during eval--either by deleting them or treating them as line
 endings--with escape sequences.
@@ -158,12 +165,12 @@ found.
 
                                     <hr />
                                     </div>
-                                    <div class="private">
-                                    <h4><a name="property__VALUES">_VALUES</a>
-                                        <code>- private static {RegExp}</code>
+                                    <div class="private" rel="yui:property" resource="#property__VALUES">
+                                    <h4><a name="property__VALUES" property="yui:name">_VALUES</a>
+                                        - <code>private static <span property="yui:type">{RegExp}</span></code>
                                     </h4>
                                     <div class="detail">
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Second step in the validation.  Regex used to replace all simple
 values with ']' characters.
                                         </div>
@@ -174,25 +181,25 @@ values with ']' characters.
 
                                     <hr />
                                     </div>
-
-
                             </div>
                         </div>
 
+                    </div>
 
+                    <div rel="yui:methods" resource="#methods">
                         <div class="section method details">
                             <h3 id="methods">Methods</h3>
                             <div class="content">
-                                    <div class="">
+                                    <div class="" rel="yui:method" resource="#method__char">
                                     <h4>
                                         <a name="method__char">_char</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                         
                                         
                                         
                                         String
-                                            <strong>_char</strong>
+                                            <strong property="yui:name">_char</strong>
                                            (
                                                 
                                                         
@@ -202,26 +209,28 @@ values with ']' characters.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Escapes a special character to a safe Unicode representation
                                         </div>
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>c &lt;String&gt;</code>
-                                                              single character to escape
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">c</span>
+                                                        &lt;<span property="yui:type">String</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  single character to escape</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         String
                                                     </code></dt>
-                                                    <dd>safe Unicode escape</dd>
+                                                    <dd property="yui:returnInfo">safe Unicode escape</dd>
                                                 </dl>
 
 
@@ -232,16 +241,16 @@ values with ']' characters.
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="">
+                                    <div class="" rel="yui:method" resource="#method__isValid">
                                     <h4>
                                         <a name="method__isValid">_isValid</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                         
                                          static 
                                         
                                         boolean
-                                            <strong>_isValid</strong>
+                                            <strong property="yui:name">_isValid</strong>
                                            (
                                                 
                                                         
@@ -251,7 +260,7 @@ values with ']' characters.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Four step determination whether a string is valid JSON.  In three steps,
 escape sequences, safe values, and properly placed open square brackets
 are replaced with placeholders or removed.  Then in the final step, the
@@ -260,20 +269,22 @@ result of all these replacements is checked for invalid characters.
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>str &lt;String&gt;</code>
-                                                              JSON string to be tested
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">str</span>
+                                                        &lt;<span property="yui:type">String</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  JSON string to be tested</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         boolean
                                                     </code></dt>
-                                                    <dd>is the string safe for eval?</dd>
+                                                    <dd property="yui:returnInfo">is the string safe for eval?</dd>
                                                 </dl>
 
 
@@ -284,16 +295,16 @@ result of all these replacements is checked for invalid characters.
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="private">
+                                    <div class="private" rel="yui:method" resource="#method__prepare">
                                     <h4>
                                         <a name="method__prepare">_prepare</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                          private 
                                         
                                         
                                         String
-                                            <strong>_prepare</strong>
+                                            <strong property="yui:name">_prepare</strong>
                                            (
                                                 
                                                         
@@ -303,27 +314,29 @@ result of all these replacements is checked for invalid characters.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Replace certain Unicode characters that may be handled incorrectly by
 some browser implementations.
                                         </div>
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>s &lt;String&gt;</code>
-                                                              parse input
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">s</span>
+                                                        &lt;<span property="yui:type">String</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  parse input</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         String
                                                     </code></dt>
-                                                    <dd>sanitized JSON string ready to be validated/parsed</dd>
+                                                    <dd property="yui:returnInfo">sanitized JSON string ready to be validated/parsed</dd>
                                                 </dl>
 
 
@@ -334,16 +347,16 @@ some browser implementations.
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="private">
+                                    <div class="private" rel="yui:method" resource="#method__revive">
                                     <h4>
                                         <a name="method__revive">_revive</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                          private 
                                         
                                         
                                         MIXED
-                                            <strong>_revive</strong>
+                                            <strong property="yui:name">_revive</strong>
                                            (
                                                 
                                                         
@@ -357,7 +370,7 @@ some browser implementations.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Traverses nested objects, applying a filter or reviver function to
 each value.  The value returned from the function will replace the
 original value in the key:value pair.  If the value returned is
@@ -366,24 +379,28 @@ undefined, the key will be omitted from the returned object.
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>data &lt;MIXED&gt;</code>
-                                                              Any JavaScript data
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">data</span>
+                                                        &lt;<span property="yui:type">MIXED</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  Any JavaScript data</span>
                                                         </dd>
-                                                        <dd>
-                                                            <code>reviver &lt;Function&gt;</code>
-                                                              filter or mutation function
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">reviver</span>
+                                                        &lt;<span property="yui:type">Function</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  filter or mutation function</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         MIXED
                                                     </code></dt>
-                                                    <dd>The results of the filtered/mutated data structure</dd>
+                                                    <dd property="yui:returnInfo">The results of the filtered/mutated data structure</dd>
                                                 </dl>
 
 
@@ -394,16 +411,16 @@ undefined, the key will be omitted from the returned object.
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="private">
+                                    <div class="private" rel="yui:method" resource="#method__string">
                                     <h4>
                                         <a name="method__string">_string</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                          private 
                                         
                                         
                                         String
-                                            <strong>_string</strong>
+                                            <strong property="yui:name">_string</strong>
                                            (
                                                 
                                                         
@@ -413,26 +430,28 @@ undefined, the key will be omitted from the returned object.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Enclose escaped strings in quotes
                                         </div>
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>s &lt;String&gt;</code>
-                                                              string to wrap
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">s</span>
+                                                        &lt;<span property="yui:type">String</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  string to wrap</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         String
                                                     </code></dt>
-                                                    <dd>'"'+s+'"' after s has had special characters escaped</dd>
+                                                    <dd property="yui:returnInfo">'"'+s+'"' after s has had special characters escaped</dd>
                                                 </dl>
 
 
@@ -443,16 +462,16 @@ undefined, the key will be omitted from the returned object.
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="">
+                                    <div class="" rel="yui:method" resource="#method__stringify">
                                     <h4>
                                         <a name="method__stringify">_stringify</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                         
                                         
                                         
                                         String
-                                            <strong>_stringify</strong>
+                                            <strong property="yui:name">_stringify</strong>
                                            (
                                                 
                                                         
@@ -478,42 +497,52 @@ undefined, the key will be omitted from the returned object.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Worker function used by public stringify.
                                         </div>
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>h &lt;Object&gt;</code>
-                                                              object holding the key
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">h</span>
+                                                        &lt;<span property="yui:type">Object</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  object holding the key</span>
                                                         </dd>
-                                                        <dd>
-                                                            <code>key &lt;String&gt;</code>
-                                                              String key in object h to serialize
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">key</span>
+                                                        &lt;<span property="yui:type">String</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  String key in object h to serialize</span>
                                                         </dd>
-                                                        <dd>
-                                                            <code>depth &lt;Number&gt;</code>
-                                                              depth to serialize
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">depth</span>
+                                                        &lt;<span property="yui:type">Number</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  depth to serialize</span>
                                                         </dd>
-                                                        <dd>
-                                                            <code>w &lt;Array|Function&gt;</code>
-                                                              array of whitelisted keys OR replacer function
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">w</span>
+                                                        &lt;<span property="yui:type">Array|Function</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  array of whitelisted keys OR replacer function</span>
                                                         </dd>
-                                                        <dd>
-                                                            <code>pstack &lt;Array&gt;</code>
-                                                              used to protect against recursion
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">pstack</span>
+                                                        &lt;<span property="yui:type">Array</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  used to protect against recursion</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         String
                                                     </code></dt>
-                                                    <dd>serialized version of o</dd>
+                                                    <dd property="yui:returnInfo">serialized version of o</dd>
                                                 </dl>
 
 
@@ -524,16 +553,16 @@ undefined, the key will be omitted from the returned object.
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="">
+                                    <div class="" rel="yui:method" resource="#method_dateToString">
                                     <h4>
                                         <a name="method_dateToString">dateToString</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                         
                                          static 
                                         
                                         String
-                                            <strong>dateToString</strong>
+                                            <strong property="yui:name">dateToString</strong>
                                            (
                                                 
                                                         
@@ -543,7 +572,7 @@ undefined, the key will be omitted from the returned object.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Serializes a Date instance as a UTC date string.  Used internally by
 stringify.  Override this method if you need Dates serialized in a
 different format.
@@ -551,20 +580,22 @@ different format.
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>d &lt;Date&gt;</code>
-                                                              The Date to serialize
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">d</span>
+                                                        &lt;<span property="yui:type">Date</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  The Date to serialize</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         String
                                                     </code></dt>
-                                                    <dd>stringified Date in UTC format YYYY-MM-DDTHH:mm:SSZ</dd>
+                                                    <dd property="yui:returnInfo">stringified Date in UTC format YYYY-MM-DDTHH:mm:SSZ</dd>
                                                 </dl>
 
 
@@ -575,16 +606,16 @@ different format.
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="">
+                                    <div class="" rel="yui:method" resource="#method_isValid">
                                     <h4>
                                         <a name="method_isValid">isValid</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                         
                                          static 
                                         
                                         boolean
-                                            <strong>isValid</strong>
+                                            <strong property="yui:name">isValid</strong>
                                            (
                                                 
                                                         
@@ -594,7 +625,7 @@ different format.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Four step determination whether a string is valid JSON.  In three steps,
 escape sequences, safe values, and properly placed open square brackets
 are replaced with placeholders or removed.  Then in the final step, the
@@ -603,20 +634,22 @@ result of all these replacements is checked for invalid characters.
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>str &lt;String&gt;</code>
-                                                              JSON string to be tested
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">str</span>
+                                                        &lt;<span property="yui:type">String</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  JSON string to be tested</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         boolean
                                                     </code></dt>
-                                                    <dd>is the string safe for eval?</dd>
+                                                    <dd property="yui:returnInfo">is the string safe for eval?</dd>
                                                 </dl>
 
 
@@ -627,16 +660,16 @@ result of all these replacements is checked for invalid characters.
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="">
+                                    <div class="" rel="yui:method" resource="#method_parse">
                                     <h4>
                                         <a name="method_parse">parse</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                         
                                          static 
                                         
                                         MIXED
-                                            <strong>parse</strong>
+                                            <strong property="yui:name">parse</strong>
                                            (
                                                 
                                                         
@@ -650,32 +683,36 @@ result of all these replacements is checked for invalid characters.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Parse a JSON string, returning the native JavaScript representation.
 Only minor modifications from http://www.json.org/json2.js.
                                         </div>
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>s &lt;string&gt;</code>
-                                                              JSON string data
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">s</span>
+                                                        &lt;<span property="yui:type">string</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  JSON string data</span>
                                                         </dd>
-                                                        <dd>
-                                                            <code>reviver &lt;function&gt;</code>
-                                                              (optional) function(k,v) passed each key:value
-pair of object literals, allowing pruning or altering values
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">reviver</span>
+                                                        &lt;<span property="yui:type">function</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  (optional) function(k,v) passed each key:value
+pair of object literals, allowing pruning or altering values</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         MIXED
                                                     </code></dt>
-                                                    <dd>the native JavaScript representation of the JSON string</dd>
+                                                    <dd property="yui:returnInfo">the native JavaScript representation of the JSON string</dd>
                                                 </dl>
 
 
@@ -686,16 +723,16 @@ pair of object literals, allowing pruning or altering values
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="">
+                                    <div class="" rel="yui:method" resource="#method_stringify">
                                     <h4>
                                         <a name="method_stringify">stringify</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                         
                                          static 
                                         
                                         string
-                                            <strong>stringify</strong>
+                                            <strong property="yui:name">stringify</strong>
                                            (
                                                 
                                                         
@@ -713,7 +750,7 @@ pair of object literals, allowing pruning or altering values
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Converts an arbitrary value to a JSON string representation.
 Cyclical object or array references are replaced with null.
 If a whitelist is provided, only matching object keys will be included.
@@ -723,28 +760,34 @@ be stringified as empty.
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>o &lt;MIXED&gt;</code>
-                                                              any arbitrary object to convert to JSON string
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">o</span>
+                                                        &lt;<span property="yui:type">MIXED</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  any arbitrary object to convert to JSON string</span>
                                                         </dd>
-                                                        <dd>
-                                                            <code>w &lt;Array|Function&gt;</code>
-                                                              (optional) whitelist of acceptable object keys to include OR a function(value,key) to alter values before serialization
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">w</span>
+                                                        &lt;<span property="yui:type">Array|Function</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  (optional) whitelist of acceptable object keys to include OR a function(value,key) to alter values before serialization</span>
                                                         </dd>
-                                                        <dd>
-                                                            <code>d &lt;number&gt;</code>
-                                                              (optional) depth limit to recurse objects/arrays (practical minimum 1)
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">d</span>
+                                                        &lt;<span property="yui:type">number</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  (optional) depth limit to recurse objects/arrays (practical minimum 1)</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         string
                                                     </code></dt>
-                                                    <dd>JSON string representation of the input</dd>
+                                                    <dd property="yui:returnInfo">JSON string representation of the input</dd>
                                                 </dl>
 
 
@@ -755,16 +798,16 @@ be stringified as empty.
                                     </div>
                                     <hr />
                                     </div>
-                                    <div class="">
+                                    <div class="" rel="yui:method" resource="#method_stringToDate">
                                     <h4>
                                         <a name="method_stringToDate">stringToDate</a></h4>
-                                    <div class="detail">
+                                    <div class="detail" >
                                         <code>
                                         
                                         
                                         
                                         Date
-                                            <strong>stringToDate</strong>
+                                            <strong property="yui:name">stringToDate</strong>
                                            (
                                                 
                                                         
@@ -774,7 +817,7 @@ be stringified as empty.
                                             )
                                         </code>
                                         
-                                        <div class="description">
+                                        <div class="description" property="yui:description">
                                             Reconstitute Date instances from the default JSON UTC serialization.
 Reference this from a reviver function to rebuild Dates during the
 parse operation.
@@ -782,20 +825,22 @@ parse operation.
 
                                         <div class="description">
 
-                                                <dl>
+                                                <dl rel="yui:parameters">
                                                     <dt>Parameters:</dt>
-                                                        <dd>
-                                                            <code>str &lt;String&gt;</code>
-                                                              String serialization of a Date
+                                                        <dd rel="yui:parameter">
+                                                        <code><span property="yui:name">str</span>
+                                                        &lt;<span property="yui:type">String</span>&gt;
+                                                        </code>
+                                                        <span property="yui:description">  String serialization of a Date</span>
                                                         </dd>
                                                 </dl>
 
                                                 <dl>
                                                     <dt>Returns:
-                                                    <code>
+                                                    <code property="yui:return">
                                                         Date
                                                     </code></dt>
-                                                    <dd></dd>
+                                                    <dd property="yui:returnInfo"></dd>
                                                 </dl>
 
 
@@ -809,174 +854,107 @@ parse operation.
                             </div>
                         </div>
 
+                    </div>
+
+                    <div rel="yui:events" resource="#events">
 
 
+                    </div>
 
+                    <div rel="yui:attributes" resource="#configattributes">
 
-
+                    </div>
 
 			</div>
 		</div>
 		<div class="yui-b">
             <div class="nav">
 
-                    <div class="module">
+                    <div id="moduleList" class="module">
                         <h4>Modules</h4>
                         <ul class="content">
-
-                                <li class=""><a href="module_animation.html">animation</a></li>
-
-                                <li class=""><a href="module_autocomplete.html">autocomplete</a></li>
-
-                                <li class=""><a href="module_button.html">button</a></li>
-
-                                <li class=""><a href="module_calendar.html">calendar</a></li>
-
-                                <li class=""><a href="module_carousel.html">carousel</a></li>
-
-                                <li class=""><a href="module_charts.html">charts</a></li>
-
-                                <li class=""><a href="module_colorpicker.html">colorpicker</a></li>
-
-                                <li class=""><a href="module_connection.html">connection</a></li>
-
-                                <li class=""><a href="module_container.html">container</a></li>
-
-                                <li class=""><a href="module_cookie.html">cookie</a></li>
-
-                                <li class=""><a href="module_datasource.html">datasource</a></li>
-
-                                <li class=""><a href="module_datatable.html">datatable</a></li>
-
-                                <li class=""><a href="module_dom.html">dom</a></li>
-
-                                <li class=""><a href="module_dragdrop.html">dragdrop</a></li>
-
-                                <li class=""><a href="module_editor.html">editor</a></li>
-
-                                <li class=""><a href="module_element.html">element</a></li>
-
-                                <li class=""><a href="module_event.html">event</a></li>
-
-                                <li class=""><a href="module_get.html">get</a></li>
-
-                                <li class=""><a href="module_history.html">history</a></li>
-
-                                <li class=""><a href="module_imagecropper.html">imagecropper</a></li>
-
-                                <li class=""><a href="module_imageloader.html">imageloader</a></li>
-
-                                <li class="selected"><a href="module_json.html">json</a></li>
-
-                                <li class=""><a href="module_layout.html">layout</a></li>
-
-                                <li class=""><a href="module_logger.html">logger</a></li>
-
-                                <li class=""><a href="module_menu.html">menu</a></li>
-
-                                <li class=""><a href="module_paginator.html">paginator</a></li>
-
-                                <li class=""><a href="module_profiler.html">profiler</a></li>
-
-                                <li class=""><a href="module_profilerviewer.html">profilerviewer</a></li>
-
-                                <li class=""><a href="module_resize.html">resize</a></li>
-
-                                <li class=""><a href="module_selector.html">selector</a></li>
-
-                                <li class=""><a href="module_slider.html">slider</a></li>
-
-                                <li class=""><a href="module_tabview.html">tabview</a></li>
-
-                                <li class=""><a href="module_treeview.html">treeview</a></li>
-
-                                <li class=""><a href="module_uploader.html">uploader</a></li>
-
-                                <li class=""><a href="module_yahoo.html">yahoo</a></li>
-
-                                <li class=""><a href="module_yuiloader.html">yuiloader</a></li>
-
-                                <li class=""><a href="module_yuitest.html">yuitest</a></li>
+                                <li class=""><a href="module_animation.html" title="animation">animation</a></li>
+                                <li class=""><a href="module_autocomplete.html" title="autocomplete">autocomplete</a></li>
+                                <li class=""><a href="module_button.html" title="button">button</a></li>
+                                <li class=""><a href="module_calendar.html" title="calendar">calendar</a></li>
+                                <li class=""><a href="module_carousel.html" title="carousel">carousel</a></li>
+                                <li class=""><a href="module_charts.html" title="charts">charts</a></li>
+                                <li class=""><a href="module_colorpicker.html" title="colorpicker">colorpicker</a></li>
+                                <li class=""><a href="module_connection.html" title="connection">connection</a></li>
+                                <li class=""><a href="module_container.html" title="container">container</a></li>
+                                <li class=""><a href="module_cookie.html" title="cookie">cookie</a></li>
+                                <li class=""><a href="module_datasource.html" title="datasource">datasource</a></li>
+                                <li class=""><a href="module_datatable.html" title="datatable">datatable</a></li>
+                                <li class=""><a href="module_dom.html" title="dom">dom</a></li>
+                                <li class=""><a href="module_dragdrop.html" title="dragdrop">dragdrop</a></li>
+                                <li class=""><a href="module_editor.html" title="editor">editor</a></li>
+                                <li class=""><a href="module_element.html" title="element">element</a></li>
+                                <li class=""><a href="module_event.html" title="event">event</a></li>
+                                <li class=""><a href="module_get.html" title="get">get</a></li>
+                                <li class=""><a href="module_history.html" title="history">history</a></li>
+                                <li class=""><a href="module_imagecropper.html" title="imagecropper">imagecropper</a></li>
+                                <li class=""><a href="module_imageloader.html" title="imageloader">imageloader</a></li>
+                                <li class="selected"><a href="module_json.html" title="json">json</a></li>
+                                <li class=""><a href="module_layout.html" title="layout">layout</a></li>
+                                <li class=""><a href="module_logger.html" title="logger">logger</a></li>
+                                <li class=""><a href="module_menu.html" title="menu">menu</a></li>
+                                <li class=""><a href="module_paginator.html" title="paginator">paginator</a></li>
+                                <li class=""><a href="module_profiler.html" title="profiler">profiler</a></li>
+                                <li class=""><a href="module_profilerviewer.html" title="profilerviewer">profilerviewer</a></li>
+                                <li class=""><a href="module_resize.html" title="resize">resize</a></li>
+                                <li class=""><a href="module_selector.html" title="selector">selector</a></li>
+                                <li class=""><a href="module_slider.html" title="slider">slider</a></li>
+                                <li class=""><a href="module_stylesheet.html" title="stylesheet">stylesheet</a></li>
+                                <li class=""><a href="module_tabview.html" title="tabview">tabview</a></li>
+                                <li class=""><a href="module_treeview.html" title="treeview">treeview</a></li>
+                                <li class=""><a href="module_uploader.html" title="uploader">uploader</a></li>
+                                <li class=""><a href="module_yahoo.html" title="yahoo">yahoo</a></li>
+                                <li class=""><a href="module_yuiloader.html" title="yuiloader">yuiloader</a></li>
+                                <li class=""><a href="module_yuitest.html" title="yuitest">yuitest</a></li>
                         </ul>
                     </div>
 
-                    <div class="module">
+                    <div id="classList" class="module">
                         <h4>Classes</h4>
                         <ul class="content">
-                                <li class="selected"><a href="JSON.html">JSON</a></li>
+                                <li class="selected"><a href="JSON.html" title="JSON">JSON</a></li>
                         </ul>
                     </div>
 
-                    <div class="module">
+                    <div id="fileList" class="module">
                         <h4>Files</h4>
                         <ul class="content">        
-                                <li class=""><a href="JSON.js.html">JSON.js</a></li>
+                                <li class=""><a href="JSON.js.html" title="JSON.js">JSON.js</a></li>
                         </ul>
                     </div>
 
-                    <div class="module">
+                    <div id="propertyList" class="module">
                         <h4>Properties</h4>
                         <ul class="content">        
-                                <li class="private"><a href="#property__BRACKETS">_BRACKETS</a>
-                                        <!--<code>&lt;{RegExp}&gt;</code>-->
-                                </li>
-                                <li class="private"><a href="#property__CHARS">_CHARS</a>
-                                        <!--<code>&lt;{RegExp}&gt;</code>-->
-                                </li>
-                                <li class="private"><a href="#property__ESCAPES">_ESCAPES</a>
-                                        <!--<code>&lt;{RegExp}&gt;</code>-->
-                                </li>
-                                <li class="private"><a href="#property__INVALID">_INVALID</a>
-                                        <!--<code>&lt;{RegExp}&gt;</code>-->
-                                </li>
-                                <li class="private"><a href="#property__SPECIAL_CHARS">_SPECIAL_CHARS</a>
-                                        <!--<code>&lt;{RegExp}&gt;</code>-->
-                                </li>
-                                <li class="private"><a href="#property__UNICODE_EXCEPTIONS">_UNICODE_EXCEPTIONS</a>
-                                        <!--<code>&lt;{RegExp}&gt;</code>-->
-                                </li>
-                                <li class="private"><a href="#property__VALUES">_VALUES</a>
-                                        <!--<code>&lt;{RegExp}&gt;</code>-->
-                                </li>
+                                <li class="private"><a href="#property__BRACKETS" title="_BRACKETS">_BRACKETS</a></li>
+                                <li class="private"><a href="#property__CHARS" title="_CHARS">_CHARS</a></li>
+                                <li class="private"><a href="#property__ESCAPES" title="_ESCAPES">_ESCAPES</a></li>
+                                <li class="private"><a href="#property__INVALID" title="_INVALID">_INVALID</a></li>
+                                <li class="private"><a href="#property__SPECIAL_CHARS" title="_SPECIAL_CHARS">_SPECIAL_CHARS</a></li>
+                                <li class="private"><a href="#property__UNICODE_EXCEPTIONS" title="_UNICODE_EXCEPTIONS">_UNICODE_EXCEPTIONS</a></li>
+                                <li class="private"><a href="#property__VALUES" title="_VALUES">_VALUES</a></li>
                         </ul>
                     </div>
 
-                    <div class="module">
+                    <div id="methodsList" class="module">
                         <h4>Methods</h4>
                         <ul class="content">        
-                                <li class=""><!--<code>String</code>-->
-                                <a href="#method__char">_char</a>
-                                </li>
-                                <li class=""><!--<code>boolean</code>-->
-                                <a href="#method__isValid">_isValid</a>
-                                </li>
-                                <li class="private"><!--<code>String</code>-->
-                                <a href="#method__prepare">_prepare</a>
-                                </li>
-                                <li class="private"><!--<code>MIXED</code>-->
-                                <a href="#method__revive">_revive</a>
-                                </li>
-                                <li class="private"><!--<code>String</code>-->
-                                <a href="#method__string">_string</a>
-                                </li>
-                                <li class=""><!--<code>String</code>-->
-                                <a href="#method__stringify">_stringify</a>
-                                </li>
-                                <li class=""><!--<code>String</code>-->
-                                <a href="#method_dateToString">dateToString</a>
-                                </li>
-                                <li class=""><!--<code>boolean</code>-->
-                                <a href="#method_isValid">isValid</a>
-                                </li>
-                                <li class=""><!--<code>MIXED</code>-->
-                                <a href="#method_parse">parse</a>
-                                </li>
-                                <li class=""><!--<code>string</code>-->
-                                <a href="#method_stringify">stringify</a>
-                                </li>
-                                <li class=""><!--<code>Date</code>-->
-                                <a href="#method_stringToDate">stringToDate</a>
-                                </li>
+                                <li class=""><a href="#method__char" title="_char">_char</a></li>
+                                <li class=""><a href="#method__isValid" title="_isValid">_isValid</a></li>
+                                <li class="private"><a href="#method__prepare" title="_prepare">_prepare</a></li>
+                                <li class="private"><a href="#method__revive" title="_revive">_revive</a></li>
+                                <li class="private"><a href="#method__string" title="_string">_string</a></li>
+                                <li class=""><a href="#method__stringify" title="_stringify">_stringify</a></li>
+                                <li class=""><a href="#method_dateToString" title="dateToString">dateToString</a></li>
+                                <li class=""><a href="#method_isValid" title="isValid">isValid</a></li>
+                                <li class=""><a href="#method_parse" title="parse">parse</a></li>
+                                <li class=""><a href="#method_stringify" title="stringify">stringify</a></li>
+                                <li class=""><a href="#method_stringToDate" title="stringToDate">stringToDate</a></li>
                         </ul>
                     </div>
 
@@ -987,8 +965,11 @@ parse operation.
 	</div>
 	<div id="ft">
         <hr />
-        Copyright &copy; 2008 Yahoo! Inc. All rights reserved.
+        Copyright &copy; 2009 Yahoo! Inc. All rights reserved.
 	</div>
 </div>
+<script type="text/javascript">
+    ALL_YUI_PROPS = [{"access": "private", "host": "JSON", "name": "_BRACKETS", "url": "JSON.html#property__BRACKETS", "type": "property"}, {"access": "", "host": "JSON", "name": "_char", "url": "JSON.html#method__char", "type": "method"}, {"access": "private", "host": "JSON", "name": "_CHARS", "url": "JSON.html#property__CHARS", "type": "property"}, {"access": "", "host": "JSON", "name": "dateToString", "url": "JSON.html#method_dateToString", "type": "method"}, {"access": "private", "host": "JSON", "name": "_ESCAPES", "url": "JSON.html#property__ESCAPES", "type": "property"}, {"access": "private", "host": "JSON", "name": "_INVALID", "url": "JSON.html#property__INVALID", "type": "property"}, {"access": "", "host": "JSON", "name": "_isValid", "url": "JSON.html#method__isValid", "type": "method"}, {"access": "", "host": "JSON", "name": "isValid", "url": "JSON.html#method_isValid", "type": "method"}, {"access": "", "host": "JSON", "name": "parse", "url": "JSON.html#method_parse", "type": "method"}, {"access": "private", "host": "JSON", "name": "_prepare", "url": "JSON.html#method__prepare", "type": "method"}, {"access": "private", "host": "JSON", "name": "_revive", "url": "JSON.html#method__revive", "type": "method"}, {"access": "private", "host": "JSON", "name": "_SPECIAL_CHARS", "url": "JSON.html#property__SPECIAL_CHARS", "type": "property"}, {"access": "private", "host": "JSON", "name": "_string", "url": "JSON.html#method__string", "type": "method"}, {"access": "", "host": "JSON", "name": "_stringify", "url": "JSON.html#method__stringify", "type": "method"}, {"access": "", "host": "JSON", "name": "stringify", "url": "JSON.html#method_stringify", "type": "method"}, {"access": "", "host": "JSON", "name": "stringToDate", "url": "JSON.html#method_stringToDate", "type": "method"}, {"access": "private", "host": "JSON", "name": "_UNICODE_EXCEPTIONS", "url": "JSON.html#property__UNICODE_EXCEPTIONS", "type": "property"}, {"access": "private", "host": "JSON", "name": "_VALUES", "url": "JSON.html#property__VALUES", "type": "property"}];
+</script>
 </body>
 </html>
