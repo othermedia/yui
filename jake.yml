@@ -822,5 +822,4 @@ packages:
         - YAHOO.util.ShouldFail
         - YAHOO.util.UnexpectedError
         - YAHOO.util.UnexpectedValue
-        - YAHOO.util.UserAction
 
