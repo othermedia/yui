@@ -86,6 +86,7 @@ packages:
         - YAHOO.util.Event
         - YAHOO.util.EventProvider
         - YAHOO.util.KeyListener
+        - YAHOO.widget.DateMath
       provides:
         - YAHOO.widget.Cal2up
         - YAHOO.widget.CalGrp
@@ -95,7 +96,6 @@ packages:
         - YAHOO.widget.CalendarGroup
         - YAHOO.widget.CalendarNavigator
         - YAHOO.widget.Calendar_Core
-        - YAHOO.widget.DateMath
   
   carousel:
     files:
@@ -124,6 +124,7 @@ packages:
         - YAHOO.util.AttributeProvider
         - YAHOO.util.DataSource
         - YAHOO.util.Dom
+        - YAHOO.widget.SWF
       provides:
         - YAHOO.widget.Axis
         - YAHOO.widget.BarChart
@@ -260,6 +261,7 @@ packages:
         - YAHOO.util.DD
         - YAHOO.util.DDProxy
         - YAHOO.util.DragDrop
+        - YAHOO.widget.Button
         - YAHOO.widget.Calendar
       provides:
         - YAHOO.util.ColumnResizer
@@ -283,13 +285,18 @@ packages:
   datemath:
     files:
       - datemath/datemath-min
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+      provides:
+        - YAHOO.widget.DateMath
   
   dragdrop:
     files:
       - dragdrop/dragdrop-min
     meta:
       requires:
-        - YAHOO.env.ua
         - YAHOO.util
         - YAHOO.util.CustomEvent
         - YAHOO.util.Dom
@@ -353,18 +360,52 @@ packages:
   element-delegate:
     files:
       - element-delegate/element-delegate-min
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Element
+        - YAHOO.util.Selector
+      provides:
+        - YAHOO.util.Element.prototype.delegate
+        - YAHOO.util.Element.prototype.removeDelegate
   
   event-delegate:
     files:
       - event-delegate/event-delegate-min
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Event
+        - YAHOO.util.Selector
+      provides:
+        - YAHOO.util.Event.delegate
+        - YAHOO.util.Event.removeDelegate
   
   event-mouseenter:
     files:
       - event-mouseenter/event-mouseenter-min
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+      provides:
+        - YAHOO.util.Event._createMouseDelegate
   
   event-simulate:
     files:
       - event-simulate/event-simulate-min
+    meta:
+      requires:
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+      provides:
+        - YAHOO.util.UserAction
   
   get:
     files:
@@ -423,6 +464,7 @@ packages:
       - json/json-min
     meta:
       requires:
+        - YAHOO.env.ua
         - YAHOO.lang
       provides:
         - YAHOO.lang.JSON
@@ -510,6 +552,7 @@ packages:
     meta:
       requires:
         - YAHOO.lang
+        - YAHOO.util.Dom
       provides:
         - YAHOO.tool.Profiler
   
@@ -537,6 +580,16 @@ packages:
   progressbar:
     files:
       - progressbar/progressbar-min
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util.Dom
+        - YAHOO.util.Element
+      uses:
+        - YAHOO.util.Anim
+      provides:
+        - YAHOO.widget.ProgressBar
   
   resize:
     files:
@@ -592,6 +645,23 @@ packages:
   storage:
     files:
       - storage/storage-min
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util
+        - YAHOO.util.Cookie
+        - YAHOO.util.Dom
+        - YAHOO.util.Event
+        - YAHOO.util.SWFStore
+      provides:
+        - YAHOO.util.Storage
+        - YAHOO.util.StorageEngineGears
+        - YAHOO.util.StorageEngineHTML5
+        - YAHOO.util.StorageEngineKeyed
+        - YAHOO.util.StorageEngineSWF
+        - YAHOO.util.StorageEvent
+        - YAHOO.util.StorageManager
   
   stylesheet:
     files:
@@ -606,6 +676,16 @@ packages:
   swf:
     files:
       - swf/swf-min
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.lang
+        - YAHOO.util.Dom
+        - YAHOO.util.Element
+        - YAHOO.util.Event
+      provides:
+        - YAHOO.util.SWFDetect
+        - YAHOO.widget.SWF
   
   swfdetect:
     files:
@@ -614,6 +694,15 @@ packages:
   swfstore:
     files:
       - swfstore/swfstore-min
+    meta:
+      requires:
+        - YAHOO.env.ua
+        - YAHOO.util
+        - YAHOO.util.AttributeProvider
+        - YAHOO.util.Cookie
+        - YAHOO.widget.SWF
+      provides:
+        - YAHOO.util.SWFStore
   
   tabview:
     files:
@@ -651,6 +740,9 @@ packages:
         - YAHOO.widget.MenuNode
         - YAHOO.widget.Node
         - YAHOO.widget.RootNode
+        - YAHOO.widget.TVAnim
+        - YAHOO.widget.TVFadeIn
+        - YAHOO.widget.TVFadeOut
         - YAHOO.widget.TextNode
         - YAHOO.widget.TreeView
   
@@ -710,7 +802,6 @@ packages:
         - YAHOO.lang.JSON
         - YAHOO.lang
         - YAHOO.util.Dom
-        - YAHOO.util.Event
         - YAHOO.util.EventProvider
         - YAHOO.widget.LogReader
       provides:
