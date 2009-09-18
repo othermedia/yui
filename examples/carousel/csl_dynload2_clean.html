@@ -50,7 +50,7 @@ body {
     .yui-skin-sam .yui-carousel-nav select {
         display: none;
     }
-    
+    /* Always be sure to give your carousel items a width and a height */
     .yui-carousel-element li {
         height: 75px;
         width: 75px;
@@ -61,7 +61,7 @@ body {
 
 </head>
 
-<body class=" yui-skin-sam">
+<body class="yui-skin-sam">
 
 
 <h1>Using Ajax for deferred loading of items</h1>
@@ -140,8 +140,15 @@ body {
 
     YAHOO.util.Event.onDOMReady(function (ev) {
         var carousel, spotlight = YAHOO.util.Dom.get("spotlight");
-       
+
         carousel = new YAHOO.widget.Carousel("container", {
+
+             /* Setting numItems is required for dynamic loading. This property lets Carousel 
+                know how many total items it will ever be populated with (statically and/or dynamically).
+                Not to be confused with numVisible: the number of items shown to a 
+                user per page. In this example, we don't specify numVisible and Carousel 
+                defaults to 3 items visible per page. */
+                 
                 numItems: 17
         });
 	
@@ -195,4 +202,3 @@ body {
 
 </body>
 </html>
-<!-- presentbright.corp.yahoo.com uncompressed/chunked Thu Feb 19 10:53:08 PST 2009 -->

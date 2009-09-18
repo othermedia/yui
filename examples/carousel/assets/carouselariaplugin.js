@@ -38,7 +38,6 @@
 		_KEY_DOWN = "keydown",
 		_PRESENTATION = "presentation",
 		_BUTTON = "button",
-		_HREF = "href",
 		_UL = "UL",
 		_A = "A",
 		_RENDER = "render", 
@@ -261,15 +260,12 @@
 		setARIARole(oAnchor, _BUTTON);
 		setARIAProperty(oAnchor, _CONTROLS, object.listID);
 
-		oAnchor.value = oAnchor.getAttribute(_HREF, 2);
-		oAnchor.removeAttribute(_HREF);
-
 		var nTabIndex = Dom.hasClass(element, oCarousel.CLASSES.SELECTED_NAV) ? 0 : -1;
 
 		oAnchor.tabIndex = nTabIndex;
 		
-		var nToolBarIndex = aToolBarButtons.length;
-		var oEM = Dom.getFirstChild(oAnchor);
+		var nToolBarIndex = aToolBarButtons.length,
+			oEM = Dom.getFirstChild(oAnchor);
 
 		if (nTabIndex === 0) {
 			m_oCurrentButtonIndex[oCarousel.get(_ID)] = nToolBarIndex;

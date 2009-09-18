@@ -29,6 +29,10 @@ body {
 
 <!--begin custom header content for this example-->
 <style type="text/css">
+label {
+    color:#E76300;
+    font-weight:bold;
+}
 #myAutoComplete {
     width:40em; /* set width here or else widget will expand to fit its container */
     padding-bottom:2em;
@@ -40,7 +44,7 @@ body {
 
 </head>
 
-<body class=" yui-skin-sam">
+<body class="yui-skin-sam">
 
 
 <h1>Customizing Remote Requests</h1>
@@ -52,7 +56,7 @@ body {
 
 <!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->
 
-<h3>Yahoo! Search:</h3>
+<label for="myInput">Yahoo! Search:</label>
 <div id="myAutoComplete">
 	<input id="myInput" type="text">
 	<div id="myContainer"></div>
@@ -90,4 +94,3 @@ YAHOO.example.RemoteCustomRequest = function() {
 
 </body>
 </html>
-<!-- presentbright.corp.yahoo.com uncompressed/chunked Thu Feb 19 10:53:05 PST 2009 -->

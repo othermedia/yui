@@ -83,7 +83,7 @@ body {
 
 </head>
 
-<body class=" yui-skin-sam">
+<body class="yui-skin-sam">
 
 
 <h1>Menu Buttons</h1>
@@ -166,7 +166,7 @@ body {
 										//	target of the event
 
 			if (oMenuItem) {
-				alert("[MenuItem Properties] text: " + 
+				YAHOO.log("[MenuItem Properties] text: " + 
 							oMenuItem.cfg.getProperty("text") + ", value: " + 
 							oMenuItem.value);
 			}
@@ -191,7 +191,7 @@ body {
 
 		var onOverlayClick = function (p_oEvent) {
 			
-			alert("You clicked the Button's menu.");
+			YAHOO.log("You clicked the Button's menu.");
 			
 		};
 
@@ -206,7 +206,7 @@ body {
 
 		var onOverlayShow = function (p_sType, p_aArgs) {
 		
-			alert("The Button's menu is now visible.");
+			YAHOO.log("The Button's menu is now visible.");
 			
 		};
 		
@@ -249,7 +249,7 @@ body {
 			
 			var sText = p_oItem.cfg.getProperty("text");
 			
-			alert("[MenuItem Properties] text: " + sText + ", value: " + 
+			YAHOO.log("[MenuItem Properties] text: " + sText + ", value: " + 
 					p_oItem.value);
 			
     		oMenuButton5.set("label", sText);			
@@ -324,4 +324,3 @@ body {
 
 </body>
 </html>
-<!-- presentbright.corp.yahoo.com uncompressed/chunked Thu Feb 19 10:53:06 PST 2009 -->

@@ -280,6 +280,10 @@ packages:
         - YAHOO.widget.TextareaCellEditor
         - YAHOO.widget.TextboxCellEditor
   
+  datemath:
+    files:
+      - datemath/datemath-min
+  
   dragdrop:
     files:
       - dragdrop/dragdrop-min
@@ -345,6 +349,22 @@ packages:
         - YAHOO.util.Attribute
         - YAHOO.util.AttributeProvider
         - YAHOO.util.Element
+  
+  element-delegate:
+    files:
+      - element-delegate/element-delegate-min
+  
+  event-delegate:
+    files:
+      - event-delegate/event-delegate-min
+  
+  event-mouseenter:
+    files:
+      - event-mouseenter/event-mouseenter-min
+  
+  event-simulate:
+    files:
+      - event-simulate/event-simulate-min
   
   get:
     files:
@@ -514,6 +534,10 @@ packages:
       provides:
         - YAHOO.widget.ProfilerViewer
   
+  progressbar:
+    files:
+      - progressbar/progressbar-min
+  
   resize:
     files:
       - resize/resize-min
@@ -565,6 +589,10 @@ packages:
         - YAHOO.widget.Slider
         - YAHOO.widget.SliderThumb
   
+  storage:
+    files:
+      - storage/storage-min
+  
   stylesheet:
     files:
       - stylesheet/stylesheet-min
@@ -574,6 +602,18 @@ packages:
         - YAHOO.util
       provides:
         - YAHOO.util.StyleSheet
+  
+  swf:
+    files:
+      - swf/swf-min
+  
+  swfdetect:
+    files:
+      - swfdetect/swfdetect-min
+  
+  swfstore:
+    files:
+      - swfstore/swfstore-min
   
   tabview:
     files:

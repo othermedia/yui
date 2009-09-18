@@ -35,7 +35,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.yahoo.astra.fl.charts.axes</a></td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IStackingAxis extends <a href="IAxis.html">IAxis</a></td>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IStackingAxis extends <a href="IAxis.html">IAxis</a>, <a href="none">flash.events.IEventDispatcher</a></td>
 </tr>
 <tr>
 <td class="classHeaderTableLabel">Implementors</td><td><a href="../axes/NumericAxis.html">NumericAxis</a>, <a href="../axes/TimeAxis.html">TimeAxis</a></td>
@@ -76,6 +76,19 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 </td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
 </tr>
 <tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#height">height</a> : Number<div class="summaryTableDescription"> 
+   Total height of axis
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#labelData">labelData</a> : <a href="../axes/AxisLabelData.html">AxisLabelData</a>
+<div class="summaryTableDescription">
+   Maximum dimensions of axis labels
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedProperty">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#labelFunction">labelFunction</a> : Function<div class="summaryTableDescription">
    A function may be set to determine the text value of the labels.</div>
 </td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
@@ -83,6 +96,11 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <tr class="hideInheritedProperty">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#labelSpacing">labelSpacing</a> : Number<div class="summaryTableDescription">
    The space, in pixels, between labels on an axis.</div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#maxLabel">maxLabel</a> : String<div class="summaryTableDescription">
+   Largest label value to appear on the axis.</div>
 </td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
 </tr>
 <tr class="hideInheritedProperty">
@@ -94,6 +112,12 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <tr class="hideInheritedProperty">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#maxLabelWidth">maxLabelWidth</a> : Number<div class="summaryTableDescription">
    Gets or sets the maximum width of a label
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#position">position</a> : String<div class="summaryTableDescription">
+   Position of axis in relation to the chart
    </div>
 </td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
 </tr>
@@ -118,6 +142,12 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#title">title</a> : String<div class="summaryTableDescription">
    The text that will appear next to the axis to indicate information
    about the data that it displays.</div>
+</td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="IAxis.html#width">width</a> : Number<div class="summaryTableDescription">
+   Total width of axis
+   </div>
 </td><td class="summaryTableOwnerCol"><a href="IAxis.html">IAxis</a></td>
 </tr>
 </table>

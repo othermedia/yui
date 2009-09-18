@@ -27,6 +27,10 @@ body {
 
 <!--begin custom header content for this example-->
 <style type="text/css">
+    #container {
+        margin: 0 auto;
+    }
+
     /* Style the spotlight container */
     #spotlight {
         border: 1px solid #ccc;
@@ -35,17 +39,15 @@ body {
         padding: 1px;
         width: 240px;
     }
-    
-    #container {
-        margin: 0 auto;
-    }
 
+    /* Always be sure to give your carousel items a width and a height */
     .yui-carousel-element li {
         height: 75px;
         opacity: 0.6;
         width: 75px;
+        opacity: 0.6;
     }
-    
+
     .yui-carousel-element .yui-carousel-item-selected {
         opacity: 1;
     }
@@ -55,7 +57,7 @@ body {
 
 </head>
 
-<body class=" yui-skin-sam">
+<body class="yui-skin-sam">
 
 
 <h1>Spotlight example</h1>
@@ -113,25 +115,6 @@ body {
 </div>
 <!-- The spotlight container -->
 <div id="spotlight"></div>
-
-<style type="text/css">
-/* Style the spotlight container */
-#spotlight {
-	border: 1px solid #ccc;
-	height: 180px;
-	margin: 10px auto;
-	padding: 1px;
-	width: 240px;
-}
-
-.yui-carousel-element li {
-	opacity: 0.6;
-}
-
-.yui-carousel-element .yui-carousel-item-selected {
-	opacity: 1;
-}
-</style>
 <script>
     (function () {
         // Get the image link from within its (parent) container.
@@ -173,4 +156,3 @@ body {
 
 </body>
 </html>
-<!-- presentbright.corp.yahoo.com uncompressed/chunked Thu Feb 19 10:53:08 PST 2009 -->
