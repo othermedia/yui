@@ -635,7 +635,7 @@ Y.Selector = {
     }
 };
 
-if (YAHOO.env.ua.ie && YAHOO.env.ua.ie < 8) { // rewrite class for IE < 8
+if (YAHOO.env.ua.ie && ((!document.documentMode && YAHOO.env.ua.ie < 8) || document.documentMode < 8)) { // rewrite class for IE < 8
     Y.Selector.attrAliases['class'] = 'className';
     Y.Selector.attrAliases['for'] = 'htmlFor';
 }
